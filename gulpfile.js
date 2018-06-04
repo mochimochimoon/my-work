@@ -1,32 +1,28 @@
-var gulp = require('gulp');
-var watch = require('gulp-watch');
-var sass = require('gulp-sass');
-var plumber = require('gulp-plumber');
-var imagemin = require('gulp-imagemin');
-var concat = require('gulp-concat');
-var ejs = require('gulp-ejs');
-var browserSync = require('browser-sync').create();
-//メモリにキャッシュして変更だけを反映
-var cache      = require('gulp-cached');
-//sassで@import "~~/**"で一括読み込みできるようになる
-const sassGlob = require('gulp-sass-glob');
-//CSSの圧縮
-const cleanCSS = require('gulp-clean-css');
-//webpackをgulpで使うためのプラグイン
+const gulp = require('gulp');
+const watch = require('gulp-watch');
+const sass = require('gulp-sass');
+const plumber = require('gulp-plumber');
+const imagemin = require('gulp-imagemin');
+const concat = require('gulp-concat');
+const ejs = require('gulp-ejs');
+const browserSync = require('browser-sync').create();// メモリにキャッシュして変更だけを反映
+const cache = require('gulp-cached');// sassで@import "~~/**"で一括読み込みできるようになる
+const sassGlob = require('gulp-sass-glob');// CSSの圧縮
+const cleanCSS = require('gulp-clean-css');// webpackをgulpで使うためのプラグイン
 const webpack = require('webpack-stream');
 
 
 gulp.task('ejs', () => {
-  gulp.src('./src/ejs/**/[^_]*.ejs')
+  gulp.src('./src/ejs/**/[^_]*.ejs', {base: './src/ejs'})// baseはファイルの階層の基準となるところ
     .pipe(plumber())
-    .pipe(ejs(null, null, {ext: '.html'}))//extはつける拡張子
+    .pipe(ejs(null, {root: './src'}, {ext: '.html'}))// rootはルートディレクトリ,extはつける拡張子
     .pipe(gulp.dest('./dist'));
 });
 
 gulp.task('sass', () => {
   gulp.src('./src/scss/core.scss')
     .pipe(plumber())
-    .pipe(sassGlob())//ignorePathで最初に読み込むsファイルや除外するファイルを設定できる
+    .pipe(sassGlob())// ignorePathで最初に読み込むsファイルや除外するファイルを設定できる
     .pipe(sass())
     .pipe(cleanCSS({
       level: 2,
@@ -69,8 +65,8 @@ gulp.task('image', () =>
 
 gulp.task('serve', ['watch'], () => {
   browserSync.init({
-    open: true,//サーバー起動時にページを開くか？また、開くURLを設定
-    ghostMode: false,//ghostは操作の同期
+    open: true, // サーバー起動時にページを開くか？また、開くURLを設定
+    ghostMode: false, // ghostは操作の同期
     server: {
       baseDir: './dist',
     },
@@ -96,4 +92,4 @@ gulp.task('watch', ['build'], () => {
 });
 
 gulp.task('build', ['ejs', 'sass', 'js', 'image']);
-gulp.task('default', ['serve'])
+gulp.task('default', ['serve']);
