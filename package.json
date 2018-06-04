@@ -10,6 +10,7 @@
     "gulp": "^3.9.1",
     "gulp-cached": "^1.1.1",
     "gulp-clean-css": "^3.9.3",
+    "gulp-concat": "^2.6.1",
     "gulp-ejs": "^3.1.2",
     "gulp-imagemin": "^4.1.0",
     "gulp-notify": "^3.2.0",

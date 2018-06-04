@@ -1,10 +1,10 @@
-var gulp = require('gulp')
-var watch = require('gulp-watch')
-var sass = require('gulp-sass')
-var plumber = require('gulp-plumber')
-var imagemin = require('gulp-imagemin')
-var concat = require('gulp-concat')
-var ejs = require('gulp-ejs')
+var gulp = require('gulp');
+var watch = require('gulp-watch');
+var sass = require('gulp-sass');
+var plumber = require('gulp-plumber');
+var imagemin = require('gulp-imagemin');
+var concat = require('gulp-concat');
+var ejs = require('gulp-ejs');
 var browserSync = require('browser-sync').create();
 //メモリにキャッシュして変更だけを反映
 var cache      = require('gulp-cached');
@@ -24,9 +24,9 @@ gulp.task('ejs', () => {
 });
 
 gulp.task('sass', () => {
-  gulp.src('./src/scss/style.scss')
+  gulp.src('./src/scss/core.scss')
     .pipe(plumber())
-    .pipe(sassGlob())
+    .pipe(sassGlob())//ignorePathで最初に読み込むsファイルや除外するファイルを設定できる
     .pipe(sass())
     .pipe(cleanCSS({
       level: 2,
@@ -64,7 +64,7 @@ gulp.task('image', () =>
       progressive: true,
       interlaced: true,
     })))
-    .pipe(gulp.dest('dist./mg'))
+    .pipe(gulp.dest('dist/img'))
 );
 
 gulp.task('serve', ['watch'], () => {
