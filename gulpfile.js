@@ -20,7 +20,7 @@ gulp.task('ejs', () => {
 });
 
 gulp.task('sass', () => {
-  gulp.src('./src/scss/core.scss')
+  gulp.src('./src/scss/style.scss')
     .pipe(plumber())
     .pipe(sassGlob())// ignorePathで最初に読み込むsファイルや除外するファイルを設定できる
     .pipe(sass())
