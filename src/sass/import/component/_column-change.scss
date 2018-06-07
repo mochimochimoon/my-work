@@ -46,8 +46,7 @@
       }
     }
   }
-  &.is-selected,
-  &:hover {
+  &.is-selected {
     background-color: #aaa;
     .column-change-btn__icon {
       >li:after {
@@ -63,11 +62,14 @@
   margin: -8px;
   > li {
     box-sizing: border-box;
-    flex: 0 1 100 / 3 * 1%;
+    flex: 0 1 auto;
     padding: 8px;
-    .is-2-column &{
+    transition: .5s;
+    .is-2-col &{
       flex-basis: 50%;
-      background-color: #fff;
+    }
+    .is-3-col &{
+      flex-basis: 100 / 3 * 1%;
     }
     >a {
       display: block;
@@ -83,11 +85,12 @@
     padding-top: 100%; /* 高さを幅の75%に固定 */
   }
   &__body {
-    background-color:#666;
+    background-color:#aca;
     position: absolute;
     top: 0;
     left: 0;
     bottom: 0;
     right: 0;
+    border-radius: 4%;
   }
 }
