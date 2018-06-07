@@ -20,9 +20,9 @@ gulp.task('ejs', () => {
 });
 
 gulp.task('sass', () => {
-  gulp.src('./src/scss/style.scss')
+  gulp.src('./src/sass/style.scss')
     .pipe(plumber())
-    .pipe(sassGlob())// ignorePathで最初に読み込むsファイルや除外するファイルを設定できる
+    .pipe(sassGlob()) // ignorePathで除外するファイルを設定できる
     .pipe(sass())
     .pipe(cleanCSS({
       level: 2,
