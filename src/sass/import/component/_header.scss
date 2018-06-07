@@ -1,0 +1,88 @@
+.header-action {
+  background-color: #eee;
+  display: flex;
+  padding: 8px 16px;
+}
+.header-btn {
+  background-color: aqua;
+  display: block;
+  margin-right: 16px;
+  height: 40px;
+  width: 40px;
+  transition: .2s;
+  padding: 8px;
+  &:hover {
+    padding: 10px 8px;
+  }
+}
+.humberger {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  > div,
+  &:after,
+  &:before {
+    content: "";
+    display: block;
+    position: absolute;
+    width: 100%;
+    height: 5px;
+    left: 0;
+    background-color: #aaa;
+    border-radius: 4px;
+  }
+  > div {
+    margin: auto 0;
+    top: 0;
+    bottom: 0;
+  }
+  &:before {
+    top: 0;
+  }
+  &:after {
+    bottom: 0;
+  }
+}
+
+.header-link {
+  display: flex;
+  > li {
+    margin-right: 16px;
+    :last-child {
+      margin-right: 0;
+    }
+  }
+}
+
+.header-icon {
+  display: block;
+  position: relative;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  > span {
+    position: relative;
+    display: block;
+    padding: 8px;
+    z-index: 1;
+  }
+  &:after {
+    display: block;
+    position: absolute;
+    margin: auto;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    content: "";
+    width: 0;
+    height: 0;
+    border-radius: 50%;
+    transition: .2s;
+    background-color: #ddd;
+  }
+  &:hover:after {
+    width: 100%;
+    height: 100%;
+  }
+}
