@@ -1,0 +1,33 @@
+.drawer {
+  z-index: 10;
+  pointer-events: none;
+  overflow: hidden;
+  &__slide {
+    pointer-events: all;
+  }
+
+  //modifier
+  &--left {
+    position: fixed;
+    top:0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    .drawer__hidden-container {
+      height: 100%;
+    }
+    .drawer__slide {
+      overflow-y: scroll;
+      width: 100%;
+      height: 100%;
+      transform: translateX(-100%);
+      transition: .2s;
+      @media screen and (min-width: 600px) {
+        width: 220px;
+      }
+      .is-side-menu-active &{
+        transform: translateX(0);
+      }
+    }
+  }
+}

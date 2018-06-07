@@ -1,4 +1,6 @@
 (function() {
+  const $body = $('body');
+
   // Tab
   $('.js-tab-trigger').on('click', function() {
     const $trigger = $(this);
@@ -37,7 +39,6 @@
     return false;
   });
   $(window).on('scroll', () => {
-    const $body = $('body');
     const scroll = $(window).scrollTop();
     const scrollBottom = scroll + $(window).innerHeight();
     const reference = $('.js-pagetop-reference').offset().top + 16 + 28;
@@ -49,4 +50,27 @@
       $body.addClass('is-pagetop-fixed');
     }
   });
+
+  // Side Drawer
+  (function() {
+    const slideClose = () => {
+      $body.removeClass('is-no-scroll');
+      $body.removeClass('is-side-menu-active');
+    };
+    $('.js-side-trigger').on('click', function() {
+      if ($body.hasClass('is-side-menu-active')) {
+        slideClose();
+      } else {
+        $body.addClass('is-no-scroll');
+        $body.addClass('is-side-menu-active');
+      }
+      return false;
+    });
+    $('body').on('click', function(e) {
+      if (!$(e.target).closest('.js-slide-wrapper').length) {
+        slideClose();
+      }
+      return false;
+    });
+  })();
 })();
