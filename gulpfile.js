@@ -71,7 +71,7 @@ gulp.task('serve', ['watch'], () => {
 });
 
 gulp.task('watch', ['build'], () => {
-  watch('./src/scss/**/*.scss', () => {
+  watch('./src/sass/**/*.scss', () => {
     gulp.start('sass');
   });
   watch('./src/ejs/**/*.ejs', () => {
