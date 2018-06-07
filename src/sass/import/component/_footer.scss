@@ -6,15 +6,35 @@
 }
 
 .pagetop {
-  position: relative;
+  pointer-events: none;
+  .is-pagetop-fixed &{
+    position: fixed;
+    width: 100%;
+    max-width: 992px;
+    margin: 0 auto;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    > .pagetop__btn {
+      position: absolute;
+      right: 16px;
+      bottom: 16px;
+    }
+  }
+  .is-pagetop-static & {
+    position: relative;
+    > .pagetop__btn {
+      position: absolute;
+      right: 0;
+      top: -60px;
+    }
+  }
   &__btn {
+    pointer-events: all;
     background-color: #000;
     display: flex;
     justify-content: center;
     align-items: center;
-    position: absolute;
-    right: 0;
-    top: -60px;
     width: 40px;
     height: 40px;
     border-radius: 50%;

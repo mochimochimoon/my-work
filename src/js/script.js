@@ -30,4 +30,23 @@
     }
     return false;
   });
+
+  // pagetop
+  $('.js-pagetop-trigger').on('click', () => {
+    $('html,body').animate({scrollTop: 0}, 1000);
+    return false;
+  });
+  $(window).on('scroll', () => {
+    const $body = $('body');
+    const scroll = $(window).scrollTop();
+    const scrollBottom = scroll + $(window).innerHeight();
+    const reference = $('.js-pagetop-reference').offset().top + 16 + 28;
+    if (reference < scrollBottom) {
+      $body.removeClass('is-pagetop-fixed');
+      $body.addClass('is-pagetop-static');
+    } else {
+      $body.removeClass('is-pagetop-static');
+      $body.addClass('is-pagetop-fixed');
+    }
+  });
 })();
