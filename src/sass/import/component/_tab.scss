@@ -1,7 +1,6 @@
 .tab-section {
   margin-bottom: 32px;
 }
-
 .tab-btn-list {
   display: flex;
   >li {
@@ -14,18 +13,37 @@
   }
 }
 .tab-btn {
+  display: block;
+  width: 100%;
   font-size: 16px;
   padding: 8px 16px;
+  color: #fff;
+  cursor: pointer;
 }
 .tab-contents-list {
   > li {
-    &.is-hidden {
-      display: none;
+    display: none;
+    &.is-active {
+      display: block;
     }
   }
 }
 .tab-card {
   background-color: #eee;
-  min-height: 200px;
   padding: 16px;
+  >p {
+    padding: 8px 16px;
+    min-height: 200px;
+    background-color: rgba(#fff, .9);
+    border-radius: 4px;
+  }
+}
+.red-tab {
+  background-color: #cbb;
+}
+.green-tab {
+  background-color: #bcb;
+}
+.blue-tab {
+  background-color: #bbc;
 }
