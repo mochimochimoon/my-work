@@ -13,16 +13,16 @@ const webpack = require('webpack-stream');
 
 
 gulp.task('ejs', () => {
-  gulp.src('./src/ejs/**/[^_]*.ejs', {base: './src/ejs'})// baseはファイルの階層の基準となるところ
+  gulp.src('./src/ejs/page/**/[^_]*.ejs', {base: './src/ejs/page'})// baseはファイルの階層の基準となるところ
     .pipe(plumber())
     .pipe(ejs(null, {root: './src'}, {ext: '.html'}))// rootはルートディレクトリ,extはつける拡張子
     .pipe(gulp.dest('./dist'));
 });
 
 gulp.task('sass', () => {
-  gulp.src('./src/scss/style.scss')
+  gulp.src('./src/sass/style.scss')
     .pipe(plumber())
-    .pipe(sassGlob())// ignorePathで最初に読み込むsファイルや除外するファイルを設定できる
+    .pipe(sassGlob()) // ignorePathで除外するファイルを設定できる
     .pipe(sass())
     .pipe(cleanCSS({
       level: 2,
@@ -36,19 +36,19 @@ gulp.task('js', () => {
     .pipe(concat('script.js'))
     .pipe(webpack({
       module: {
-        loaders: [
+        loaders: [ // 変換のためのローダーについて
           {
-            test: /\.js$/,
-            exclude: /node_modules/,
-            loader: 'babel-loader',
+            test: /\.js$/, // 対象となるファイル
+            exclude: /node_modules/, // 除外するファイル
+            loader: 'babel-loader', // 適用するローダー
             query: {
-              presets: ['es2015'],
+              presets: ['es2015'], // ローダーに渡すパラメータ
             },
           },
         ],
       },
       output: {
-        filename: 'script.js',
+        filename: 'script.js', // 出力するファイル名
       },
     }))
     .pipe(gulp.dest('dist/js'));
@@ -56,10 +56,7 @@ gulp.task('js', () => {
 
 gulp.task('image', () =>
   gulp.src('./src/images/**/*')
-    .pipe(cache(imagemin({
-      progressive: true,
-      interlaced: true,
-    })))
+    .pipe(cache(imagemin()))
     .pipe(gulp.dest('dist/img'))
 );
 
@@ -74,7 +71,7 @@ gulp.task('serve', ['watch'], () => {
 });
 
 gulp.task('watch', ['build'], () => {
-  watch('./src/scss/**/*.scss', () => {
+  watch('./src/sass/**/*.scss', () => {
     gulp.start('sass');
   });
   watch('./src/ejs/**/*.ejs', () => {
