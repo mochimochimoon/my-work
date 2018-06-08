@@ -1,0 +1,29 @@
+.humberger {
+  display: block;
+  position: relative;
+  width: 100%;
+  height: 100%;
+  > span,
+  &:after,
+  &:before {
+    content: "";
+    display: block;
+    position: absolute;
+    width: 100%;
+    height: 5px;
+    left: 0;
+    background-color: #aaa;
+    border-radius: 4px;
+  }
+  > span {
+    margin: auto 0;
+    top: 0;
+    bottom: 0;
+  }
+  &:before {
+    top: 0;
+  }
+  &:after {
+    bottom: 0;
+  }
+}

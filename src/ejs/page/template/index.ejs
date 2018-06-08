@@ -1,16 +1,21 @@
 <!DOCTYPE html>
 <html>
 <% include /ejs/components/_head %>
-<body>
+<body class="is-pagetop-fixed">
   <% include /ejs/components/_header %>
+  <% include /ejs/components/_side-menu %>
   <main>
+    <div class="container">
+      <% include /ejs/page/template/include/_bread %>
+    </div>
     <div class="hero"></div>
     <div class="container">
-      container
-
+        <% include /ejs/page/template/include/_column-change %>
+        <% include /ejs/page/template/include/_tab %>
     </div>
   </main>
   <% include /ejs/components/_footer %>
+  <% include /ejs/components/_body-bottom %>
 </body>
 
 </html>

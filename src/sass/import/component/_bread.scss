@@ -1,0 +1,24 @@
+.bread {
+  padding: 8px 16px;
+  border-bottom: 1px solid #ccc;
+  &__list {
+    display: flex;
+    > li {
+      display: flex;
+      font-size: 11px;
+      >a {
+        display: block;
+        &:hover {
+          text-decoration: underline;
+        }
+      }
+      &:after {
+        content: '>';
+        margin: 0 0.5em;
+      }
+      &:last-child:after {
+        display: none;
+      }
+    }
+  }
+}

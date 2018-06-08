@@ -13,17 +13,22 @@ const webpack = require('webpack-stream');
 
 
 gulp.task('ejs', () => {
-  gulp.src('./src/ejs/page/**/[^_]*.ejs', {base: './src/ejs/page'})// baseはファイルの階層の基準となるところ
+  return gulp.src('./src/ejs/page/**/[^_]*.ejs', {base: './src/ejs/page'})// baseはファイルの階層の基準となるところ
     .pipe(plumber())
     .pipe(ejs(null, {root: './src'}, {ext: '.html'}))// rootはルートディレクトリ,extはつける拡張子
     .pipe(gulp.dest('./dist'));
 });
 
 gulp.task('sass', () => {
-  gulp.src('./src/sass/style.scss')
-    .pipe(plumber())
+  return gulp.src('./src/sass/style.scss')
+    // .pipe(plumber({
+    //   errorHandler: function(err) {
+    //     console.log(err.messageFormatted);
+    //     this.emit('end');
+    //   },
+    // }))
     .pipe(sassGlob()) // ignorePathで除外するファイルを設定できる
-    .pipe(sass())
+    .pipe(sass().on('error', sass.logError))
     .pipe(cleanCSS({
       level: 2,
     }))
@@ -54,11 +59,11 @@ gulp.task('js', () => {
     .pipe(gulp.dest('dist/js'));
 });
 
-gulp.task('image', () =>
-  gulp.src('./src/images/**/*')
+gulp.task('image', () => {
+  return gulp.src('./src/images/**/*')
     .pipe(cache(imagemin()))
-    .pipe(gulp.dest('dist/img'))
-);
+    .pipe(gulp.dest('dist/img'));
+});
 
 gulp.task('serve', ['watch'], () => {
   browserSync.init({
@@ -71,7 +76,7 @@ gulp.task('serve', ['watch'], () => {
 });
 
 gulp.task('watch', ['build'], () => {
-  watch('./src/sass/**/*.scss', () => {
+  watch('src/sass/**/*.scss', () => {
     gulp.start('sass');
   });
   watch('./src/ejs/**/*.ejs', () => {

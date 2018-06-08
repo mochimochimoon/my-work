@@ -1,1 +1,18 @@
-<header class="container">header!!!!!!</header>
+<header class="header">
+  <div class="header-action">
+    <button class="header-btn js-menu-trigger" data-active-class="is-menu-active-side">
+        <% include /ejs/components/icon/_humberger %>
+        <% include /ejs/components/icon/_close %>
+    </button>
+    <ul class="header-link">
+      <li><a href="" class="header-icon js-menu-trigger" data-active-class="is-menu-active-modal">
+        <% include /ejs/components/icon/_humberger %>
+      </a></li>
+      <li><a href="" class="header-icon header-icon--down js-menu-trigger" data-active-class="is-menu-active-down">
+        <% include /ejs/components/icon/_down-arrow %>
+      </a></li>
+    </ul>
+  </div>
+  <% include /ejs/components/_down-menu %>
+  <% include /ejs/components/_modal-menu %>
+</header>
