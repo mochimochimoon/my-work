@@ -53,22 +53,26 @@
 
   // Side Drawer
   (function() {
-    const slideClose = () => {
+    const menuCloseAll = () => {
+      $body.removeClass((index, className) => {
+        return (className.match(/\bis-menu-active\S+/g) || []).join(' ');
+      });
       $body.removeClass('is-no-scroll');
-      $body.removeClass('is-side-menu-active');
     };
-    $('.js-side-trigger').on('click', function() {
-      if ($body.hasClass('is-side-menu-active')) {
-        slideClose();
+
+    $('.js-menu-trigger').on('click', function() {
+      const activeClass = $(this).attr('data-active-class');
+      if ($body.hasClass(activeClass)) {
+        menuCloseAll();
       } else {
         $body.addClass('is-no-scroll');
-        $body.addClass('is-side-menu-active');
+        $body.addClass(activeClass);
       }
       return false;
     });
     $('body').on('click', function(e) {
       if (!$(e.target).closest('.js-slide-wrapper').length) {
-        slideClose();
+        menuCloseAll();
       }
       return false;
     });

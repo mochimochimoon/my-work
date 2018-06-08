@@ -7,6 +7,7 @@
 .header-action {
   background-color: #eee;
   display: flex;
+  justify-content: space-between;
   padding: 8px 16px;
 }
 .header-btn {
@@ -54,7 +55,7 @@
   display: flex;
   > li {
     margin-right: 16px;
-    :last-child {
+    &:last-child {
       margin-right: 0;
     }
   }
