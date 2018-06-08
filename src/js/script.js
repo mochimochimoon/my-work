@@ -58,15 +58,17 @@
         return (className.match(/\bis-menu-active\S+/g) || []).join(' ');
       });
       $body.removeClass('is-no-scroll');
+      $('.js-menu-trigger').removeClass('is-active');
     };
 
     $('.js-menu-trigger').on('click', function() {
       const activeClass = $(this).attr('data-active-class');
-      if ($body.hasClass(activeClass)) {
-        menuCloseAll();
-      } else {
+      const isMenuActive = $body.hasClass(activeClass);
+      menuCloseAll();
+      if (!(isMenuActive)) {
         $body.addClass('is-no-scroll');
         $body.addClass(activeClass);
+        $(this).addClass('is-active');
       }
       return false;
     });
