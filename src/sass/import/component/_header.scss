@@ -18,39 +18,18 @@
   width: 40px;
   transition: .2s;
   padding: 8px;
-  &:hover {
-    padding: 10px 8px;
+  .close {
+    display: none;
+  }
+  &.is-active {
+    .humberger {
+      display: none;
+    }
+    .close {
+      display: block;
+    }
   }
 }
-.humberger {
-  position: relative;
-  width: 100%;
-  height: 100%;
-  > div,
-  &:after,
-  &:before {
-    content: "";
-    display: block;
-    position: absolute;
-    width: 100%;
-    height: 5px;
-    left: 0;
-    background-color: #aaa;
-    border-radius: 4px;
-  }
-  > div {
-    margin: auto 0;
-    top: 0;
-    bottom: 0;
-  }
-  &:before {
-    top: 0;
-  }
-  &:after {
-    bottom: 0;
-  }
-}
-
 .header-link {
   display: flex;
   > li {
@@ -64,13 +43,16 @@
 .header-icon {
   display: block;
   position: relative;
+  box-sizing: border-box;
   width: 40px;
   height: 40px;
+  padding: 8px;
   border-radius: 50%;
   > span {
     position: relative;
     display: block;
-    padding: 8px;
+    width: 100%;
+    height: 100%;
     z-index: 1;
   }
   &:after {
@@ -92,4 +74,12 @@
     width: 100%;
     height: 100%;
   }
+  &--down {
+    transition: .2s;
+    &.is-active{
+      transform: rotate(180deg);
+    }
+  }
 }
+
+
