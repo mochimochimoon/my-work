@@ -7,8 +7,10 @@
     > li {
       display: flex;
       font-size: 11px;
-      >a {
+      >a,span {
         display: block;
+      }
+      >a {
         &:hover {
           text-decoration: underline;
         }
