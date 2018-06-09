@@ -78,7 +78,6 @@
       if (!$(e.target).closest('.js-slide-wrapper').length) {
         menuCloseAll();
       }
-      return false;
     });
   })();
 

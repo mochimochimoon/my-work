@@ -1,14 +1,16 @@
 .bread {
   padding: 8px 16px;
-  border-bottom: 1px solid #ccc;
+  border-bottom: 1px solid $border-color;
   margin-bottom: 16px;
   &__list {
     display: flex;
     > li {
       display: flex;
       font-size: 11px;
-      >a {
+      >a,span {
         display: block;
+      }
+      >a {
         &:hover {
           text-decoration: underline;
         }

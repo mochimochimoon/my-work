@@ -16,7 +16,7 @@ main {
 
 .section-sepalator {
   padding-bottom: 40px;
-  border-bottom: #ccc solid 1px;
+  border-bottom: $border-color solid 1px;
   margin-bottom: 80px;
   &:last-child {
     padding-bottom: 0;
