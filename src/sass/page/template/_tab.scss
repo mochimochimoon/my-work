@@ -1,7 +1,6 @@
 .tab-btn-list {
   display: flex;
   >li {
-    background-color: gray;
     flex-grow: 1;
     margin-right: 16px;
     &:last-child {
@@ -14,8 +13,13 @@
   width: 100%;
   font-size: 16px;
   padding: 8px 16px;
-  color: #fff;
+  border-radius: 5px 5px 0 0;
+  color: $font-color-light;
   cursor: pointer;
+  background-color: $theme-color-2;
+  &.is-selected {
+    background-color: $theme-color;
+  }
 }
 .tab-contents-list {
   > li {
@@ -26,24 +30,15 @@
   }
 }
 .tab-card {
-  background-color: #eee;
+  background-color: $theme-color;
   padding: 16px;
   >p {
     padding: 8px 16px;
     min-height: 200px;
-    background-color: rgba(#fff, .9);
     border-radius: 4px;
+    background-color: #fff;
     .is-active & {
       animation: fade-in-open 1s;
     }
   }
-}
-.red-tab {
-  background-color: #cbb;
-}
-.green-tab {
-  background-color: #bcb;
-}
-.blue-tab {
-  background-color: #bbc;
 }

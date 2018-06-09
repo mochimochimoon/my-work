@@ -1,11 +1,11 @@
 .slide-in {
-  background-color: #ccc;
+  background-color: $bg-color-2;
   padding: 16px;
   &__content {
     min-height: 100px;
     padding: 8px 16px;
     margin-bottom: 16px;
-    background-color: #fff;
+    background-color: $bg-color;
     transform: translateX(-100%);
     opacity: 0;
     transition: 1s;

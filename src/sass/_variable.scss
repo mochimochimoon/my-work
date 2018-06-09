@@ -1,6 +1,21 @@
-$border-color: #aaa;
+$theme-color: #99f;
+$theme-color-2: #aaa;
+$theme-color-white: #fff;
+$theme-color-black: #333;
 
-$icon-color: #888;
+$font-color: $theme-color-black;
+$font-color-light: $theme-color-white;
+
+$bg-color: $theme-color-white;
+$bg-color-2: $theme-color-2;
+
+$border-color: $theme-color-2;
+
+$footer-color: $theme-color-black;
+$footer-color-light: $theme-color-white;
+
+$icon-color: $theme-color-2;
+$icon-color-light: $theme-color-white;
 
 @mixin pc() {
   @media screen and (min-width: 900px) { @content; }

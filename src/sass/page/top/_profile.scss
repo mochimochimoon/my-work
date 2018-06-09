@@ -32,8 +32,8 @@
   &__repository {
     display: block;
     padding: 8px 16px;
-    background-color: #99f;
-    color: #fff;
+    background-color: $icon-color;
+    color: $icon-color-light;
     font-weight: bold;
     border-radius: 5px;
     &:after {

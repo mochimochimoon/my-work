@@ -6,7 +6,7 @@
   display: flex;
   flex-wrap: wrap;
   padding: 1.5px;
-  background-color: #fff;
+  background-color: $icon-color-light;
   .is-selected & {
     background-color: $icon-color;
   }
@@ -21,7 +21,7 @@
       height: 100%;
       background-color: $icon-color;
       .is-selected & {
-        background-color: #fff;
+        background-color: $icon-color-light;
       }
     }
   }

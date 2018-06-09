@@ -2,16 +2,15 @@
   position: fixed;
   width: 100%;
   z-index: 100;
+  background-color: $theme-color;
 }
 
 .header-action {
-  background-color: #eee;
   display: flex;
   justify-content: space-between;
   padding: 8px 16px;
 }
 .header-btn {
-  background-color: aqua;
   display: block;
   margin-right: 16px;
   height: 40px;
@@ -68,7 +67,7 @@
     height: 0;
     border-radius: 50%;
     transition: .2s;
-    background-color: #ddd;
+    background-color: rgba(#000, .2);
   }
   &:hover:after {
     width: 100%;
