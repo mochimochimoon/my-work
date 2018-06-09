@@ -13,3 +13,10 @@ main {
     filter: brightness(70%);
   }
 }
+
+.section-sepalator {
+  margin-bottom: 120px;
+  &:last-child {
+    margin-bottom: 0;
+  }
+}
