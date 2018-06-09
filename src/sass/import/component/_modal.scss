@@ -8,16 +8,16 @@
   pointer-events: none;
   opacity: 0;
   transition: .2s;
-  .is-menu-active-modal &{
+  .is-menu-active-modal & {
     pointer-events: all;
     opacity: 1;
   }
 }
 
 .modal-card {
-  background-color:#fff;
+  background-color: $bg-color;
   box-shadow: 0 0 16px 0 rgba(#000, .2);
-  max-width:640px;
+  max-width: 640px;
   height: 100%;
   margin: 0 auto;
 }
