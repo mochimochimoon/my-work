@@ -1,5 +1,5 @@
 .top-nav {
-  background-color: $theme-color-2;
+  background-color: $theme-color-1;
   padding: 16px;
   border-radius: 5px;
   &__list {
@@ -15,7 +15,7 @@
     align-items: center;
     justify-content: space-between;
     padding: 8px 16px;
-    background-color: $bg-color;
+    background-color: $theme-color-white;
     &:hover {
       text-decoration: underline;
     }
