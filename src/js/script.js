@@ -1,8 +1,8 @@
-(function() {
+(function () {
   const $body = $('body');
 
   // Tab
-  $('.js-tab-trigger').on('click', function() {
+  $('.js-tab-trigger').on('click', function () {
     const $trigger = $(this);
     if (!($trigger.hasClass('is-selected'))) {
       const number = $trigger.attr('data-tab-number');
@@ -18,14 +18,14 @@
   });
 
   // Column
-  $('.js-col-trigger').on('click', function() {
+  $('.js-col-trigger').on('click', function () {
     const $trigger = $(this);
     if (!($trigger.hasClass('is-selected'))) {
       const colClass = `is-${$trigger.attr('data-col')}-col`;
       const $wrapper = $trigger.closest('.js-col-wrapper');
       $wrapper.find('.js-col-trigger.is-selected').removeClass('is-selected');
       $trigger.addClass('is-selected');
-      $wrapper.removeClass(function(index, className) {
+      $wrapper.removeClass(function (index, className) {
         return (className.match(/is-\d-col/g) || []).join(' '); // \dは任意の数字
       });
       $wrapper.addClass(colClass);
@@ -35,7 +35,9 @@
 
   // pagetop
   $('.js-pagetop-trigger').on('click', () => {
-    $('html,body').animate({scrollTop: 0}, 1000);
+    $('html,body').animate({
+      scrollTop: 0
+    }, 1000);
     return false;
   });
   $(window).on('scroll', () => {
@@ -52,7 +54,7 @@
   });
 
   // Side Drawer
-  (function() {
+  (function () {
     const menuCloseAll = () => {
       $body.removeClass((index, className) => {
         return (className.match(/\bis-menu-active\S+/g) || []).join(' ');
@@ -61,7 +63,7 @@
       $('.js-menu-trigger').removeClass('is-active');
     };
 
-    $('.js-menu-trigger').on('click', function() {
+    $('.js-menu-trigger').on('click', function () {
       const activeClass = $(this).attr('data-active-class');
       const isMenuActive = $body.hasClass(activeClass);
       menuCloseAll();
@@ -72,11 +74,17 @@
       }
       return false;
     });
-    $('body').on('click', function(e) {
+    $('body').on('click', function (e) {
       if (!$(e.target).closest('.js-slide-wrapper').length) {
         menuCloseAll();
       }
       return false;
     });
   })();
+
+  // More
+  $('.js-more-trigger').on('click', function () {
+    $(this).closest('.js-more-wrapper').toggleClass('is-more-open');
+    return false;
+  })
 })();

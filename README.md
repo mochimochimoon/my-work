@@ -1,1 +1,3 @@
 にゃー
+npm run deployでデプロイ
+
