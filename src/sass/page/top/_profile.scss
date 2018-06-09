@@ -1,15 +1,25 @@
 .profile {
-  display: flex;
-  align-items: center;
   padding: 16px;
   border-bottom: $border-color 1px solid;
   margin-bottom: 40px;
+  &__flex {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    margin: -4px -8px;
+    > p {
+      flex-shrink: 0;
+      padding: 4px 8px;
+      &:nth-child(2) {
+        margin-right: auto;
+      }
+    }
+  }
   &__img {
     display: block;
     border-radius: 50%;
     width: 40px;
     height: 40px;
-    margin-right: 16px;
     overflow: hidden;
     > img{
       width: 100%;
@@ -22,7 +32,6 @@
   &__repository {
     display: block;
     padding: 8px 16px;
-    margin-left: auto;
     background-color: #99f;
     color: #fff;
     font-weight: bold;
