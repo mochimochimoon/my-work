@@ -1,3 +1,7 @@
 $border-color: #aaa;
 
 $icon-color: #888;
+
+@mixin pc() {
+  @media screen and (min-width: 900px) { @content; }
+}

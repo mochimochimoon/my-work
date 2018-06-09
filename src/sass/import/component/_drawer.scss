@@ -19,7 +19,7 @@
       height: 100%;
       transform: translateX(-100%);
       transition: .2s;
-      @media screen and (min-width: 600px) {
+      @include pc () {
         width: 220px;
       }
       .is-menu-active-side &{
