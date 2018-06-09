@@ -5,15 +5,15 @@
     margin: -8px;
     >li{
       box-sizing: border-box;
-      flex: 0 1 25%;
+      flex: 0 1 (100 / 6 * 1%);
       padding: 8px;
-      transition: 1s;
-      &:nth-child(n + 5) {
+      animation: fade-in-close 1s;
+      &:nth-child(n + 7) {
         display: none;
       }
       .is-more-open & {
         display: block;
-        animation: open 1s;
+        animation: fade-in-open 1s;
       }
     }
   }
@@ -55,14 +55,5 @@
     .is-more-open & {
       display: inline-block;
     }
-  }
-}
-
-@keyframes open{
-  from{
-      opacity: 0;
-  }
-  to{
-      opacity: 1;
   }
 }
