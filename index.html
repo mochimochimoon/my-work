@@ -1,16 +1,23 @@
+
+
 <!DOCTYPE html>
 <html>
-
 <head>
+  
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
-  <title>たいとる</title>
+  <title>ガラクタおきば</title>
 
-  <link rel="stylesheet" href="/css/style.css">
+  <link rel="stylesheet" href="css/style.css">
+
+  <meta name="robots" content="noindex,nofollow">
+  <meta name="description" content="個人的にいろんなものをおいておく場所">
+
+  <link href="https://fonts.googleapis.com/earlyaccess/nicomoji.css" rel="stylesheet" />
 </head>
 
-<body>
+<body class="is-pagetop-fixed">
   <header class="header">
   <div class="header-action">
     <button class="header-btn js-menu-trigger" data-active-class="is-menu-active-side">
@@ -52,16 +59,103 @@
 
 </header>
 
+  <div class="drawer drawer--left">
+  <div class="drawer__slide js-slide-wrapper">
+    <div class="side-drawer">
+      <ul>
+        <li class="side-drawer-item">
+          <a class="side-drawer-item__link" href="">
+            <span class="side-drawer-item__icon"></span>
+            <span class="side-drawer-item__text">item1</span>
+          </a>
+        </li>
+        <li class="side-drawer-item">
+          <a class="side-drawer-item__link" href="">
+            <span class="side-drawer-item__icon"></span>
+            <span class="side-drawer-item__text">item1</span>
+          </a>
+        </li>
+        <li class="side-drawer-item">
+          <a class="side-drawer-item__link" href="">
+            <span class="side-drawer-item__icon"></span>
+            <span class="side-drawer-item__text">item1</span>
+          </a>
+        </li>
+      </ul>
+    </div>
+  </div>
+</div>
+
   <main>
-    <div class="hero"></div>
+    <div class="site-title">
+  <h1>ガラクタおきば</h1>
+</div>
+
     <div class="container">
-      <div class="link">
-        <a href="template/">template</a>
-      </div>
+      <div class="profile">
+  <a href="" class="profile__img"><img src="img/mochimochimoon.png" alt="mochimochimoon"></a>
+  <a href="" class="profile__name">mochimochimoon</a>
+  <a href="https://github.com/mochimochimoon/my-work" class="profile__repository">リポジトリ</a>
+</div>
+
+      <div class="section-sepalator">
+  <div class="heading">
+    <h2>contents</h2>
+  </div>
+  <div class="top-nav">
+    <ul class="top-nav__list">
+      <li><a class="top-nav__link" href="template">HTML/CSS作成例テンプレート</a></li>
+    </ul>
+  </div>
+</div>
 
     </div>
   </main>
-  <footer></footer>
+  <footer class="footer js-pagetop-reference">
+  <div class="container">
+    <div class="pagetop">
+        <a href="" class="pagetop__btn js-pagetop-trigger"></a>
+    </div>
+
+    <div class="footer-nav">
+      <ul class="footer-nav__list">
+        <li>
+          <div class="footer-nav-card">footer-contents</div>
+        </li>
+        <li>
+          <div class="footer-nav-card">footer-contents</div>
+        </li>
+        <li>
+          <div class="footer-nav-card">footer-contents</div>
+        </li>
+        <li>
+          <div class="footer-nav-card">footer-contents</div>
+        </li>
+        <li>
+          <div class="footer-nav-card">footer-contents</div>
+        </li>
+        <li>
+          <div class="footer-nav-card">footer-contents</div>
+        </li>
+      </ul>
+    </div>
+    <div class="footer-link">
+      <div class="footer-link__group footer-link__group--left">
+        <a href="">link</a>
+        <a href="">link</a>
+        <a href="">link</a>
+      </div>
+      <div class="footer-link__group footer-link__group--right">
+        <a href="">link</a>
+        <a href="">link</a>
+      </div>
+    </div>
+  </div>
+</footer>
+
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+<script src="js/script.js"></script>
+
 </body>
 
 </html>

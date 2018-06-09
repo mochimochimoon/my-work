@@ -1,6 +1,15 @@
+<%
+var title = 'ガラクタおきば | テンプレート';
+var description = 'WEBサイトの汎用的部品の作成例をおいておく場所';
+var root = '../';
+%>
+
 <!DOCTYPE html>
 <html>
-<% include /ejs/components/_head %>
+<head>
+    <% include /ejs/components/_meta-head %>
+</head>
+
 <body class="is-pagetop-fixed">
   <% include /ejs/components/_header %>
   <% include /ejs/components/_side-menu %>
@@ -11,6 +20,8 @@
     <div class="hero"></div>
     <div class="container">
         <% include /ejs/page/template/include/_column-change %>
+        <% include /ejs/page/template/include/_more-contents %>
+        <% include /ejs/page/template/include/_slide-in %>
         <% include /ejs/page/template/include/_tab %>
     </div>
   </main>
