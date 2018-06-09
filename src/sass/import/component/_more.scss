@@ -13,7 +13,7 @@
       }
       .is-more-open & {
         display: block;
-        animation: open 1s;
+        animation: fade-in 1s;
       }
     }
   }
@@ -55,14 +55,5 @@
     .is-more-open & {
       display: inline-block;
     }
-  }
-}
-
-@keyframes open{
-  from{
-      opacity: 0;
-  }
-  to{
-      opacity: 1;
   }
 }
