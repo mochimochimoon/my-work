@@ -1,5 +1,8 @@
 .heading {
   text-align: center;
+  @include pc () {
+    text-align: left;
+  }
   >* {
     display: inline-block;
     font-size: 20px;
@@ -8,5 +11,8 @@
     padding: 0 16px 8px;
     border-bottom: $border-color 1px solid;
     margin-bottom: 16px;
+    @include pc () {
+      padding-left: 0;
+    }
   }
 }
