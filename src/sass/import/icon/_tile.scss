@@ -1,0 +1,33 @@
+.icon-tile {
+  box-sizing: border-box;
+  border: $border-color solid 1px;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-wrap: wrap;
+  padding: 1.5px;
+  background-color: #fff;
+  .is-selected & {
+    background-color: $icon-color;
+  }
+  >li {
+    box-sizing: border-box;
+    flex: 1 1 50%;
+    padding: 1.5px;
+    &:after {
+      content: "";
+      display: block;
+      width: 100%;
+      height: 100%;
+      background-color: $icon-color;
+      .is-selected & {
+        background-color: #fff;
+      }
+    }
+  }
+  &--3-col {
+    >li {
+      flex-basis: 100% / 3 * 1;
+    }
+  }
+}
