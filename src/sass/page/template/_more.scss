@@ -22,8 +22,8 @@
     text-align: center;
     > button {
       display: inline-clock;
-      background-color: #666;
-      color: #fff;
+      background-color: $icon-color;
+      color: $icon-color-light;
       padding: 8px 16px;
       border-radius: 5%;
       font-size: 14px;
@@ -33,7 +33,7 @@
         box-sizing: border-box;
         width: 0.5em;
         height: 0.5em;
-        border: 2px #fff;
+        border: 2px $icon-color-light;
         border-style: none none solid solid;
         transform: rotate(-45deg);
         margin-left: 0.5em;

@@ -1,6 +1,9 @@
+$theme-color: #99f;
+
 $border-color: #aaa;
 
 $icon-color: #888;
+$icon-color-light: #fff;
 
 @mixin pc() {
   @media screen and (min-width: 900px) { @content; }
