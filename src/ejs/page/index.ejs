@@ -1,24 +1,24 @@
 <%
-var title = 'マイ倉庫 | テンプレート';
+var title = 'マイ倉庫';
 var description = '個人的に詰め込んでおく';
-var root = '../';
+var root = '';
 %>
 
 <!DOCTYPE html>
 <html>
 <% include /ejs/components/_meta-head %>
-<body>
+<body class="is-pagetop-fixed">
   <% include /ejs/components/_header %>
+  <% include /ejs/components/_side-menu %>
   <main>
-    <div class="hero"></div>
+    <% include /ejs/page/top-include/_site-title %>
     <div class="container">
-      <div class="link">
-        <a href="<%= root %>template/">template</a>
-      </div>
-
+      <% include /ejs/page/top-include/_profile %>
+      <% include /ejs/page/top-include/_link %>
     </div>
   </main>
-  <footer></footer>
+  <% include /ejs/components/_footer %>
+  <% include /ejs/components/_body-bottom %>
 </body>
 
 </html>

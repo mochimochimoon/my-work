@@ -1,0 +1,15 @@
+.site-title {
+  text-align: center;
+  background-color: #99f;
+  padding: 16px;
+  > h1 {
+    display: inline-block;
+    color: #fff;
+    font-size: 32px;
+    font-family: 'Nico Moji';
+    font-weight: bold;
+    text-shadow: 0 0 5px rgba(#000, .4);
+    letter-spacing: 0.25em;
+    border-radius: 5px;
+  }
+}

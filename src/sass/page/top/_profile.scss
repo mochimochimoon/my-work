@@ -1,0 +1,21 @@
+.profile {
+  display: flex;
+  align-items: center;
+  padding: 16px;
+  border-bottom: $border-color 1px solid;
+  &__img {
+    display: block;
+    border-radius: 50%;
+    width: 40px;
+    height: 40px;
+    margin-right: 16px;
+    overflow: hidden;
+    > img{
+      width: 100%;
+    }
+  }
+  &__name {
+    display: block;
+    font-size: 20px;
+  }
+}
