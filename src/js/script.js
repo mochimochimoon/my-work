@@ -40,7 +40,7 @@
     }, 1000);
     return false;
   });
-  $(window).on('scroll', () => {
+  $(window).on('scroll load', () => {
     const scroll = $(window).scrollTop();
     const scrollBottom = scroll + $(window).innerHeight();
     const reference = $('.js-pagetop-reference').offset().top + 16 + 28;
@@ -88,7 +88,7 @@
   });
 
   // Slide in
-  $(window).on('scroll', () => {
+  $(window).on('scroll load', () => {
     const scroll = $(window).scrollTop();
     const scrollBottom = scroll + $(window).innerHeight();
     $('.js-slide-in').each(function(i, elem) {
