@@ -5,10 +5,10 @@
     margin: -8px;
     >li{
       box-sizing: border-box;
-      flex: 0 1 25%;
+      flex: 0 1 (100 / 6 * 1%);
       padding: 8px;
       transition: 1s;
-      &:nth-child(n + 5) {
+      &:nth-child(n + 7) {
         display: none;
       }
       .is-more-open & {
