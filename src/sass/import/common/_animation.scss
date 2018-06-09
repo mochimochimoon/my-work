@@ -1,4 +1,4 @@
-@keyframes fade-in{
+@keyframes fade-in-open{
   from{
       opacity: 0;
   }
@@ -6,3 +6,13 @@
       opacity: 1;
   }
 }
+
+@keyframes fade-in-close{
+  from{
+      opacity: 0;
+  }
+  to{
+      opacity: 1;
+  }
+}
+

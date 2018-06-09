@@ -34,7 +34,7 @@
     background-color: rgba(#fff, .9);
     border-radius: 4px;
     .is-active & {
-      animation: open 1s;
+      animation: fade-in-open 1s;
     }
   }
 }
