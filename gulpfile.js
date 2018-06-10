@@ -5,30 +5,27 @@ const plumber = require('gulp-plumber');
 const imagemin = require('gulp-imagemin');
 const concat = require('gulp-concat');
 const ejs = require('gulp-ejs');
-const browserSync = require('browser-sync').create();// メモリにキャッシュして変更だけを反映
-const cache = require('gulp-cached');// sassで@import "~~/**"で一括読み込みできるようになる
-const sassGlob = require('gulp-sass-glob');// CSSの圧縮
-const cleanCSS = require('gulp-clean-css');// webpackをgulpで使うためのプラグイン
-const webpack = require('webpack-stream');
+const browserSync = require('browser-sync').create();
+const cache = require('gulp-cached'); // メモリにキャッシュして変更だけを反映
+const sassGlob = require('gulp-sass-glob'); // importでワイルドカード
+const wait =require('gulp-wait'); // VSCバグ用
+const cleanCSS = require('gulp-clean-css'); // CSS圧縮
+const webpack = require('webpack-stream'); // webpackをgulpで使う
 
 
 gulp.task('ejs', () => {
-  return gulp.src('./src/ejs/page/**/[^_]*.ejs', {base: './src/ejs/page'})// baseはファイルの階層の基準となるところ
+  return gulp.src('./src/ejs/page/**/[^_]*.ejs', {base: './src/ejs/page'})// baseはファイル階層の基準
     .pipe(plumber())
-    .pipe(ejs(null, {root: './src'}, {ext: '.html'}))// rootはルートディレクトリ,extはつける拡張子
+    .pipe(ejs(null, {root: './src'}, {ext: '.html'}))// rootはルート,extは拡張子
     .pipe(gulp.dest('./dist'));
 });
 
 gulp.task('sass', () => {
   return gulp.src('./src/sass/style.scss')
-    // .pipe(plumber({
-    //   errorHandler: function(err) {
-    //     console.log(err.messageFormatted);
-    //     this.emit('end');
-    //   },
-    // }))
+    .pipe(plumber())
     .pipe(sassGlob()) // ignorePathで除外するファイルを設定できる
-    .pipe(sass().on('error', sass.logError))
+    .pipe(wait(500)) // 遅延しないとVSCでバグる
+    .pipe(sass())
     .pipe(cleanCSS({
       level: 2,
     }))

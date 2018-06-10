@@ -1,16 +1,23 @@
 <header class="header">
   <div class="header-action">
-    <button class="header-btn js-menu-trigger" data-active-class="is-menu-active-side">
-        <% include /ejs/components/icon/_humberger %>
-        <% include /ejs/components/icon/_close %>
-    </button>
+    <p class="header-btn">
+        <button class=" js-menu-trigger" data-active-class="is-menu-active-side">
+          <span class="header-btn__icon"><% include /ejs/components/icon/_humberger %></span>
+          <span class="header-btn__icon header-btn__icon--close"><% include /ejs/components/icon/_close %></span>
+        </button>
+    </p>
     <ul class="header-link">
-      <li><a href="" class="header-icon js-menu-trigger" data-active-class="is-menu-active-modal">
-        <% include /ejs/components/icon/_humberger %>
-      </a></li>
-      <li><a href="" class="header-icon header-icon--down js-menu-trigger" data-active-class="is-menu-active-down">
-        <% include /ejs/components/icon/_down-arrow %>
-      </a></li>
+      <li class="header-btn">
+        <button class=" js-menu-trigger" data-active-class="is-menu-active-modal">
+          <span class="header-btn__icon"><% include /ejs/components/icon/_report %></span>
+          <span class="header-btn__icon header-btn__icon--close"><% include /ejs/components/icon/_close %></span>
+        </button>
+      </li>
+      <li class="header-btn header-btn--down">
+        <button class="js-menu-trigger" data-active-class="is-menu-active-down">
+          <% include /ejs/components/icon/_down-arrow %>
+        </button>
+      </li>
     </ul>
   </div>
   <% include /ejs/components/_down-menu %>

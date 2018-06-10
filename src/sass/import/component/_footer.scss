@@ -3,6 +3,10 @@
   background-color: $theme-color-black;
   color: $font-color-light;
   padding: 40px 0 16px;
+  transition: .2s;
+  .is-no-scroll & {
+    filter: brightness(70%);
+  }
 }
 
 .pagetop {

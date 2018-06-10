@@ -11,7 +11,7 @@ body {
 main {
   padding: 56px 0 68px;
   transition: .2s;
-  .is-no-scroll &{
+  .is-no-scroll & {
     filter: brightness(70%);
   }
 }
