@@ -20,21 +20,29 @@
 <body class="is-pagetop-fixed">
   <header class="header">
   <div class="header-action">
-    <button class="header-btn js-menu-trigger" data-active-class="is-menu-active-side">
-        <span class="humberger"><span></span></span>
-
-        <span class="close"></span>
-
-    </button>
+    <p class="header-btn">
+        <button class=" js-menu-trigger" data-active-class="is-menu-active-side">
+          <span class="header-btn__icon"><span class="humberger"><span></span></span>
+</span>
+          <span class="header-btn__icon header-btn__icon--close"><span class="close"></span>
+</span>
+        </button>
+    </p>
     <ul class="header-link">
-      <li><a href="" class="header-icon js-menu-trigger" data-active-class="is-menu-active-modal">
-        <span class="humberger"><span></span></span>
+      <li class="header-btn">
+        <button class=" js-menu-trigger" data-active-class="is-menu-active-modal">
+          <span class="header-btn__icon"><span class="report"></span>
+</span>
+          <span class="header-btn__icon header-btn__icon--close"><span class="close"></span>
+</span>
+        </button>
+      </li>
+      <li class="header-btn header-btn--down">
+        <button class="js-menu-trigger" data-active-class="is-menu-active-down">
+          <span class="down-arrow"></span>
 
-      </a></li>
-      <li><a href="" class="header-icon header-icon--down js-menu-trigger" data-active-class="is-menu-active-down">
-        <span class="down-arrow"></span>
-
-      </a></li>
+        </button>
+      </li>
     </ul>
   </div>
   <div class="drawer drawer--down">
@@ -61,27 +69,30 @@
 
   <div class="drawer drawer--left">
   <div class="drawer__slide js-slide-wrapper">
-    <div class="side-drawer">
-      <ul>
-        <li class="side-drawer-item">
-          <a class="side-drawer-item__link" href="">
-            <span class="side-drawer-item__icon"></span>
-            <span class="side-drawer-item__text">item1</span>
+    <div class="side-menu">
+      <p class="side-leave">
+        <a class="right-arrow-end right-arrow-end--white" href="">
+          <span class="side-leave__icon"><img src="img/mochimochimoon.png" alt="mochimochimoon"></span>
+          <span class="side-leave__text">my-workにもどる</span>
+        </a>
+      </p>
+      <dl>
+        <dt>
+          <a class="side-item side-item--head" href="">
+            <span class="right-arrow-end right-arrow-end--white">ガラクタおきば</span>
           </a>
-        </li>
-        <li class="side-drawer-item">
-          <a class="side-drawer-item__link" href="">
-            <span class="side-drawer-item__icon"></span>
-            <span class="side-drawer-item__text">item1</span>
+        </dt>
+        <dd>
+          <a class="side-item" href="">
+            <span class="right-arrow-end">動きテンプレ</span>
           </a>
-        </li>
-        <li class="side-drawer-item">
-          <a class="side-drawer-item__link" href="">
-            <span class="side-drawer-item__icon"></span>
-            <span class="side-drawer-item__text">item1</span>
+        </dd>
+        <dd>
+          <a class="side-item" href="">
+            <span class="right-arrow-end">アイコン</span>
           </a>
-        </li>
-      </ul>
+        </dd>
+      </dl>
     </div>
   </div>
 </div>
@@ -93,9 +104,11 @@
 
     <div class="container">
       <div class="profile">
-  <a href="" class="profile__img"><img src="img/mochimochimoon.png" alt="mochimochimoon"></a>
-  <a href="" class="profile__name">mochimochimoon</a>
-  <a href="https://github.com/mochimochimoon/my-work" class="profile__repository">リポジトリ</a>
+  <div class="profile__flex">
+    <p><a href="" class="profile__img"><img src="img/mochimochimoon.png" alt="mochimochimoon"></a></p>
+    <p><a href="" class="profile__name">mochimochimoon</a></p>
+    <p><a href="https://github.com/mochimochimoon/my-work" class="profile__repository">リポジトリ</a></p>
+  </div>
 </div>
 
       <div class="section-sepalator">
@@ -104,7 +117,7 @@
   </div>
   <div class="top-nav">
     <ul class="top-nav__list">
-      <li><a class="top-nav__link" href="template">HTML/CSS作成例テンプレート</a></li>
+      <li><a class="top-nav__link" href="template"><span class="right-arrow-end">動きテンプレ（HTML/CSS/JS）</span></a></li>
     </ul>
   </div>
 </div>
