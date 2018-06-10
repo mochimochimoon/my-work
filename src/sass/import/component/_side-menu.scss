@@ -1,5 +1,6 @@
 .side-menu{
   background-color: $theme-color-white;
+  box-sizing: border-box;
   min-height: 100vh;
   padding-top: 56px;
 }
@@ -42,6 +43,7 @@
     display: block;
   }
   &--head {
+    padding: 16px;
     background-color: $theme-color-1;
     color: $font-color-light;
   }
