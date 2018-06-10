@@ -22,7 +22,7 @@
   }
 }
 .tab-contents-list {
-  > li {
+  > * {
     display: none;
     &.is-active {
       display: block;
