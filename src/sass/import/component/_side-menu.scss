@@ -1,8 +1,7 @@
 .side-menu{
   background-color: $theme-color-white;
   box-sizing: border-box;
-  min-height: 100vh;
-  padding-top: 56px;
+  min-height: calc(100vh - 56px);
 }
 
 .side-leave {

@@ -1,5 +1,4 @@
 .drawer {
-  position: relative;
   z-index: 10;
   pointer-events: none;
   overflow: hidden;
@@ -7,16 +6,16 @@
     pointer-events: all;
   }
   //modifier
-  &--left {
+  &--header {
     position: fixed;
-    top:0;
-    left: 0;
     width: 100%;
-    height: 100%;
+    height: calc(100vh -56px);
+    top:56px;
+    left:0;
+  }
+  &--left {
     > .drawer__slide {
       overflow-y: scroll;
-      width: 100%;
-      height: 100%;
       transform: translateX(-100%);
       transition: .2s;
       @include pc () {
@@ -28,11 +27,8 @@
     }
   }
   &--down {
-    position: fixed;
-    right: 0;
-    top: 56px;
-    width: 100%;
     > .drawer__slide {
+      overflow-y: scroll;
       transition: .2s;
       transform: translateY(-100%);
       .is-menu-active-down &{
