@@ -76,7 +76,9 @@
     });
     $('body').on('click', function(e) {
       if (!$(e.target).closest('.js-slide-wrapper').length) {
-        menuCloseAll();
+        if (!$(e.target).closest('.header').length) {
+          menuCloseAll();
+        }
       }
     });
   })();
