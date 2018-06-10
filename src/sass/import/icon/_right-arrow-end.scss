@@ -1,0 +1,22 @@
+.right-arrow-end {
+  position: relative;
+  &:after {
+    content: "";
+    display: block;
+    position: absolute;
+    width: 0.5em;
+    height: 0.5em;
+    margin: auto 0;
+    top: 0;
+    bottom: 0;
+    right: 0;
+    border: $font-color 1px;
+    border-style: solid solid none none;
+    transform: rotate(45deg);
+  }
+  &--white {
+    &:after {
+      border-color: $font-color-light;
+    }
+  }
+}

@@ -20,7 +20,7 @@
       transform: translateX(-100%);
       transition: .2s;
       @include pc () {
-        width: 220px;
+        width: 320px;
       }
       .is-menu-active-side &{
         transform: translateX(0);
