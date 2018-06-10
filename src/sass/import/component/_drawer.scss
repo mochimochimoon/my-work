@@ -28,7 +28,9 @@
     }
   }
   &--down {
-    position: absolute;
+    position: fixed;
+    right: 0;
+    top: 56px;
     width: 100%;
     > .drawer__slide {
       transition: .2s;
