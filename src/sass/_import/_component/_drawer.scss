@@ -21,7 +21,7 @@
       @include pc () {
         width: 320px;
       }
-      .is-menu-active-side &{
+      .is-active-menu-side &{
         transform: translateX(0);
       }
     }
@@ -31,7 +31,7 @@
       overflow-y: scroll;
       transition: .2s;
       transform: translateY(-100%);
-      .is-menu-active-down &{
+      .is-active-menu-down &{
         transform: translateY(0);
       }
     }

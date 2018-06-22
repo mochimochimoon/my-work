@@ -57,12 +57,11 @@
   (function() {
     const menuCloseAll = () => {
       $body.removeClass((index, className) => {
-        return (className.match(/\bis-menu-active\S+/g) || []).join(' ');
+        return (className.match(/\bis-active-menu\S+/g) || []).join(' ');
       });
       $body.removeClass('is-no-scroll');
       $('.js-menu-trigger').removeClass('is-active');
     };
-
     $('.js-menu-trigger').on('click', function() {
       const activeClass = $(this).attr('data-active-class');
       const isMenuActive = $body.hasClass(activeClass);
