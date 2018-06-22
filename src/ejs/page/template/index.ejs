@@ -7,25 +7,25 @@ var root = '../';
 <!DOCTYPE html>
 <html>
 <head>
-    <% include /ejs/components/_meta %>
+    <% include /ejs/_components/_meta %>
 </head>
 
 <body class="is-pagetop-fixed">
-  <% include /ejs/components/_header %>
+  <% include /ejs/_components/_header %>
   <main>
     <div class="container">
-        <% include /ejs/page/template/include/_bread %>
+        <% include /ejs/page/template/_include/_bread %>
     </div>
     <div class="container">
-        <% include /ejs/page/template/include/_column-change %>
-        <% include /ejs/page/template/include/_more-contents %>
-        <% include /ejs/page/template/include/_slide-in %>
-        <% include /ejs/page/template/include/_tab %>
+        <% include /ejs/page/template/_include/_column-change %>
+        <% include /ejs/page/template/_include/_more-contents %>
+        <% include /ejs/page/template/_include/_slide-in %>
+        <% include /ejs/page/template/_include/_tab %>
     </div>
   </main>
-  <% include /ejs/components/_menu-group %>
-  <% include /ejs/components/_footer %>
-  <% include /ejs/components/_body-bottom %>
+  <% include /ejs/_components/_menu-group %>
+  <% include /ejs/_components/_footer %>
+  <% include /ejs/_components/_body-bottom %>
 </body>
 
 </html>
