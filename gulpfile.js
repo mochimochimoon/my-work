@@ -11,10 +11,16 @@ const sassGlob = require('gulp-sass-glob'); // importでワイルドカード
 const wait =require('gulp-wait'); // VSCバグ用
 const cleanCSS = require('gulp-clean-css'); // CSS圧縮
 const webpack = require('webpack-stream'); // webpackをgulpで使う
+const named = require('vinyl-named');
 
+const outputDir = 'dist';
+const srcDir = 'src';
 
 gulp.task('ejs', () => {
-  return gulp.src('./src/ejs/page/**/[^_]*.ejs', {base: './src/ejs/page'})// baseはファイル階層の基準
+  return gulp.src(
+    './src/ejs/page/**/[^_]*.ejs',
+    {base: './src/ejs/page'} // baseはファイル階層の基準
+  )
     .pipe(plumber())
     .pipe(ejs(null, {root: './src'}, {ext: '.html'}))// rootはルート,extは拡張子
     .pipe(gulp.dest('./dist'));
@@ -62,12 +68,36 @@ gulp.task('image', () => {
     .pipe(gulp.dest('dist/img'));
 });
 
+gulp.task('react', () => {
+  return gulp.src(srcDir + '/react/**/[^_]*', {base: srcDir + '/react'})
+    .pipe(plumber())
+    .pipe(named(function(file) { // jsを複数ファイル分けて変換・ディレクトリ維持用関数
+      return file.relative.replace(/\.[^\.]+$/, '');
+    }))
+    .pipe(webpack({
+      module: {
+        loaders: [ // 変換のためのローダーについて
+          {
+            test: /\.js$/, // 対象となるファイル
+            exclude: /node_modules/, // 除外するファイル
+            loader: 'babel-loader', // 適用するローダー
+            query: {
+              presets: ['react', 'es2015'], // ローダーに渡すパラメータ
+            },
+          },
+        ],
+      },
+    }))
+    .pipe(gulp.dest(outputDir + '/react'));
+});
+
 gulp.task('serve', ['watch'], () => {
   browserSync.init({
     open: true, // サーバー起動時にページを開くか？また、開くURLを設定
     ghostMode: false, // ghostは操作の同期
     server: {
       baseDir: './dist',
+      directory: true,
     },
   });
 });
@@ -85,10 +115,13 @@ gulp.task('watch', ['build'], () => {
   watch('./src/js/**/*.js', () => {
     gulp.start('js');
   });
+  watch(srcDir + '/react/**/*.js', () => {
+    gulp.start('react');
+  });
   watch('./dist/**', () => {
     browserSync.reload();
   });
 });
 
-gulp.task('build', ['ejs', 'sass', 'js', 'image']);
+gulp.task('build', ['ejs', 'sass', 'js', 'image', 'react']);
 gulp.task('default', ['serve']);
