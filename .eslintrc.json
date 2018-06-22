@@ -1,8 +1,13 @@
 {
-  "extends": "google",
+  "extends": [
+    "google"
+  ],
   "parserOptions": {
     "ecmaVersion": 6,
-    "sourceType": "module"
+    "sourceType": "module",
+    "ecmaFeatures": {
+        "jsx": true
+    }
   },
   "rules": {
     "no-invalid-this": 0
