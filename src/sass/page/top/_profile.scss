@@ -7,7 +7,7 @@
     flex-wrap: wrap;
     align-items: center;
     margin: -4px -8px;
-    > p {
+    > * {
       flex-shrink: 0;
       padding: 4px 8px;
       &:nth-child(2) {
