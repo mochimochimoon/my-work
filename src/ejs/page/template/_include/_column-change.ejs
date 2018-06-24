@@ -1,7 +1,38 @@
+<%
+const data = {
+  "japanese": "カラム切り替え",
+  "name": "section1",
+  "codes": [
+    {
+      "type": "html",
+      "txt": `
+<div class="js-col-wrapper is-2-col">
+  <div>
+    <button class="column-change-btn js-col-trigger is-selected" data-col="2">button</button>
+    <button class="column-change-btn js-col-trigger" data-col="3">button</button>
+  </div>
+  <ul class="column-change-list">
+    <li>content</li>
+    <li>content</li>
+    <li>content</li>
+    <li>content</li>
+    <li>content</li>
+    <li>content</li>
+  </ul>
+</div>
+        `
+    },
+    {
+      "type": "sass",
+      "txt": "コード"
+    }
+  ]
+}
+-%>
 <article class="section-sepalator js-col-wrapper is-2-col js-modal-wrapper">
   <div class="heading">
     <h3>カラム数切り替え</h3>
-    <div class="js-modal-trigger">modal</div>
+    <div class="js-modal-trigger">code</div>
   </div>
   <div class="column-change-trigger">
     <button class="column-change-btn js-col-trigger is-selected" data-col="2">
@@ -21,5 +52,5 @@
     <li><a href=""><div class="square"><div class="square__body"></div></a></li>
     <li><a href=""><div class="square"><div class="square__body"></div></a></li>
   </ul>
-  <% include /ejs/_components/_modal-code %>
+<%- include('/ejs/_components/_modal-code', {data: data}) %>
 </article>

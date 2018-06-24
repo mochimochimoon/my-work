@@ -1,6 +1,38 @@
-<article class="section-sepalator js-tab-wrapper">
+<%
+const data = {
+  "japanese": "カラム切り替え",
+  "name": "section1",
+  "codes": [
+    {
+      "type": "html",
+      "txt": `
+<div class="js-col-wrapper is-2-col">
+  <div>
+    <button class="column-change-btn js-col-trigger is-selected" data-col="2">button</button>
+    <button class="column-change-btn js-col-trigger" data-col="3">button</button>
+  </div>
+  <ul class="column-change-list">
+    <li>content</li>
+    <li>content</li>
+    <li>content</li>
+    <li>content</li>
+    <li>content</li>
+    <li>content</li>
+  </ul>
+</div>
+        `
+    },
+    {
+      "type": "sass",
+      "txt": "コード"
+    }
+  ]
+}
+-%>
+<article class="section-sepalator js-tab-wrapper js-modal-wrapper">
   <div class="heading">
     <h3>タブ切り替え</h3>
+    <div class="js-modal-trigger">code</div>
   </div>
   <ul class="tab-btn-list">
     <li><button class="tab-btn red-tab js-tab-trigger is-selected" data-tab="tab-1">tab1</button></li>
@@ -24,4 +56,5 @@
       </div>
     </li>
   </ul>
+  <%- include('/ejs/_components/_modal-code', {data: data}) %>
 </article>

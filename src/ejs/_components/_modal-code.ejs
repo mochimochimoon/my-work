@@ -1,73 +1,76 @@
-<%
-data = {
-  "japanese": "カラム切り替え",
-  "name": "section1",
-  "codes": [
-    {
-      "type": "html",
-      "txt": "コード"
-    },
-    {
-      "type": "sass",
-      "txt": "コード"
-    }
-  ]
-};
--%>
-
 <div class="modal">
   <div class="modal__body">
     <div class="code js-modal-body js-tab-wrapper">
-      <div class="code__head">
-        <h2>コード:<%= data.japanese %></h2>
-        <div class="code__close js-modal-close">
-            <% include /ejs/_icon/_close %>
+      <div class="code__action">
+        <ul class="code-tab">
+<%
+const codes = data.codes;
+for (var i = 0; i < codes.length; i++) {
+  let c = codes[i];
+  let selected;
+  let active
+  if (i === 0) {
+    selected = 'true';
+    active = ' is-selected';
+  } else {
+    selected = '';
+    active = '';
+  }
+-%>
+          <li class="code-tab__trigger js-tab-trigger<%= active %>" id="<%= data.name %>-tab-<%= c.type %>" role="tab" aria-selected="<%= selected %>" aria-controls="<%= data.name %>-content-<%= c.type %>" data-tab="<%= i + 1 %>">
+            <button><%= c.type %></button>
+          </li>
+<%
+}
+-%>
+        </ul>
+        <div class="code-close js-modal-close">
+          <% include /ejs/_icon/_close %>
         </div>
       </div>
-      <div class="code__action">
-        <ul class="tab-btn-list">
-  <%
-  const codes = data.codes;
-  for (var i = 0; i < codes.length; i++) {
-    let c = codes[i];
-    let selected;
-    let active
-    if (i === 0) {
-      selected = 'true';
-      active = ' is-selected';
-    } else {
-      selected = '';
-      active = '';
-    }
-  -%>
-          <li class="tab-btn js-tab-trigger<%= active %>" id="<%= data.name %>-tab-<%= c.type %>" role="tab" aria-selected="<%= selected %>" aria-controls="<%= data.name %>-content-<%= c.type %>" data-tab="<%= i + 1 %>"><%= c.type %></li>
-  <%
+      <ul class="code__main">
+<%
+for (var i = 0; i < codes.length; i++){
+  let c = codes[i];
+  let selected;
+  let active
+  if (i === 0) {
+    selected = 'true';
+    active = ' is-active';
+  } else {
+    selected = '';
+    active = '';
   }
-  -%>
-        </ul>
-      </div>
-      <ul class="tab-contents-list">
-  <%
-  for (var i = 0; i < codes.length; i++){
-    let c = codes[i];
-    let selected;
-    let active
-    if (i === 0) {
-      selected = 'true';
-      active = ' is-active';
-    } else {
-      selected = '';
-      active = '';
-    }
-  -%>
-        <li class="js-tab-contents<%= active %>" role="tabpanel" id="<%= data.name %>-content-<%= c.type %>" aria-labelledby="<%= data.name %>-tab-<%= c.type %>" data-tab="<%= i + 1 %>">
-          <h2><%= c.type %></h2>
-          <p>sssssssssssssssssssss</p>
+-%>
+        <li class="tab-content js-tab-contents<%= active %>" role="tabpanel" id="<%= data.name %>-content-<%= c.type %>" aria-labelledby="<%= data.name %>-tab-<%= c.type %>" data-tab="<%= i + 1 %>">
+          <div class="code-card">
+            <h2 class="code-card__head"><%= c.type %></h2>
+            <p class="code-card__text">
+<%
+  const split = c.txt.split('\n');
+  for (s of split) {
+-%>
+              <span><%- escapeHTML(s) %></span>
+<%
+  }
+-%>
+            </p>
+          </div>
         </li>
-  <%
-  }
-  -%>
+<%
+}
+-%>
       </ul>
     </div>
   </div>
 </div>
+<%
+function escapeHTML(str) {
+  return str.replace(/&/g, '&amp;')
+            .replace(/</g, '&lt;')
+            .replace(/>/g, '&gt;')
+            .replace(/"/g, '&quot;')
+            .replace(/'/g, '&#039;')
+            .replace(/ /g, '&nbsp;&nbsp;');
+}
+-%>
