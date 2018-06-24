@@ -21,58 +21,68 @@
   <header class="header">
   <div class="header-action">
     <p class="header-btn">
-        <button class=" js-menu-trigger" data-active-class="is-menu-active-side">
-          <span class="header-btn__icon"><span class="humberger"><span></span></span>
+        <button class=" js-menu-trigger" data-target-menu="side">
+          <span class="header-btn_icon"><span class="humberger"><span></span></span>
 </span>
-          <span class="header-btn__icon header-btn__icon--close"><span class="close"></span>
+          <span class="header-btn_icon header-btn_icon--close"><span class="close"></span>
 </span>
         </button>
     </p>
     <ul class="header-link">
       <li class="header-btn">
-        <button class=" js-menu-trigger" data-active-class="is-menu-active-modal">
-          <span class="header-btn__icon"><span class="report"></span>
+        <button class=" js-menu-trigger" data-target-menu="modal">
+          <span class="header-btn_icon"><span class="report"></span>
 </span>
-          <span class="header-btn__icon header-btn__icon--close"><span class="close"></span>
+          <span class="header-btn_icon header-btn_icon--close"><span class="close"></span>
 </span>
         </button>
       </li>
       <li class="header-btn header-btn--down">
-        <button class="js-menu-trigger" data-active-class="is-menu-active-down">
+        <button class="js-menu-trigger" data-target-menu="down">
           <span class="down-arrow"></span>
 
         </button>
       </li>
     </ul>
   </div>
-  <div class="drawer drawer--down">
-  <div class="drawer__slide js-slide-wrapper">
-    <div class="down-menu">
-      menu
-    </div>
-  </div>
-</div>
-
-  <div class="modal">
-  <div class="modal-card">
-    <div class="menu-head">
-      <p class="menu-head__heading">MENU</p>
-      <div class="menu-head__close">
-        <span class="close"></span>
-
-      </div>
-    </div>
-  </div>
-</div>
-
 </header>
 
-  <div class="drawer drawer--left">
+
+  <main>
+    <div class="site-title">
+  <h1>ガラクタおきば</h1>
+</div>
+
+    <div class="container">
+      <article class="profile">
+  <div class="profile__flex">
+    <p><a href="" class="profile__img"><img src="img/mochimochimoon.png" alt="mochimochimoon"></a></p>
+    <h2><a href="" class="profile__name">mochimochimoon</a></h2>
+    <p><a href="https://github.com/mochimochimoon/my-work" class="profile__repository">リポジトリ</a></p>
+  </div>
+</article>
+
+      <article class="section-sepalator">
+  <div class="heading">
+    <h2>contents</h2>
+  </div>
+  <div class="top-nav">
+    <ul class="top-nav__list">
+      <li><a class="top-nav__link" href="template"><span class="right-arrow-end">動きテンプレ（HTML/CSS/JS）</span></a></li>
+    </ul>
+  </div>
+</article>
+
+    </div>
+  </main>
+  <div class="drawer drawer--header drawer--left">
   <div class="drawer__slide js-slide-wrapper">
-    <div class="side-menu">
+    <nav class="side-menu">
       <p class="side-leave">
         <a class="right-arrow-end right-arrow-end--white" href="">
-          <span class="side-leave__icon"><img src="img/mochimochimoon.png" alt="mochimochimoon"></span>
+          <span class="side-leave_icon">
+            <img src="img/mochimochimoon.png" alt="mochimochimoon">
+          </span>
           <span class="side-leave__text">my-workにもどる</span>
         </a>
       </p>
@@ -93,37 +103,31 @@
           </a>
         </dd>
       </dl>
+    </nav>
+  </div>
+</div>
+
+<div class="drawer drawer--header drawer--down">
+  <div class="drawer__slide js-slide-wrapper">
+    <div class="down-menu">
+      <p>MENU(仮)</p>
     </div>
   </div>
 </div>
 
-  <main>
-    <div class="site-title">
-  <h1>ガラクタおきば</h1>
-</div>
+<div class="modal">
+  <div class="modal-card">
+    <div class="menu-head">
+      <p class="menu-head__heading">MENU</p>
+      <div class="menu-head__close">
+        <span class="close"></span>
 
-    <div class="container">
-      <div class="profile">
-  <div class="profile__flex">
-    <p><a href="" class="profile__img"><img src="img/mochimochimoon.png" alt="mochimochimoon"></a></p>
-    <p><a href="" class="profile__name">mochimochimoon</a></p>
-    <p><a href="https://github.com/mochimochimoon/my-work" class="profile__repository">リポジトリ</a></p>
-  </div>
-</div>
-
-      <div class="section-sepalator">
-  <div class="heading">
-    <h2>contents</h2>
-  </div>
-  <div class="top-nav">
-    <ul class="top-nav__list">
-      <li><a class="top-nav__link" href="template"><span class="right-arrow-end">動きテンプレ（HTML/CSS/JS）</span></a></li>
-    </ul>
-  </div>
-</div>
-
+      </div>
     </div>
-  </main>
+  </div>
+</div>
+
+
   <footer class="footer js-pagetop-reference">
   <div class="container">
     <div class="pagetop">

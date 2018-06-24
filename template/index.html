@@ -20,58 +20,409 @@
   <header class="header">
   <div class="header-action">
     <p class="header-btn">
-        <button class=" js-menu-trigger" data-active-class="is-menu-active-side">
-          <span class="header-btn__icon"><span class="humberger"><span></span></span>
+        <button class=" js-menu-trigger" data-target-menu="side">
+          <span class="header-btn_icon"><span class="humberger"><span></span></span>
 </span>
-          <span class="header-btn__icon header-btn__icon--close"><span class="close"></span>
+          <span class="header-btn_icon header-btn_icon--close"><span class="close"></span>
 </span>
         </button>
     </p>
     <ul class="header-link">
       <li class="header-btn">
-        <button class=" js-menu-trigger" data-active-class="is-menu-active-modal">
-          <span class="header-btn__icon"><span class="report"></span>
+        <button class=" js-menu-trigger" data-target-menu="modal">
+          <span class="header-btn_icon"><span class="report"></span>
 </span>
-          <span class="header-btn__icon header-btn__icon--close"><span class="close"></span>
+          <span class="header-btn_icon header-btn_icon--close"><span class="close"></span>
 </span>
         </button>
       </li>
       <li class="header-btn header-btn--down">
-        <button class="js-menu-trigger" data-active-class="is-menu-active-down">
+        <button class="js-menu-trigger" data-target-menu="down">
           <span class="down-arrow"></span>
 
         </button>
       </li>
     </ul>
   </div>
-  <div class="drawer drawer--down">
-  <div class="drawer__slide js-slide-wrapper">
-    <div class="down-menu">
-      menu
-    </div>
-  </div>
-</div>
-
-  <div class="modal">
-  <div class="modal-card">
-    <div class="menu-head">
-      <p class="menu-head__heading">MENU</p>
-      <div class="menu-head__close">
-        <span class="close"></span>
-
-      </div>
-    </div>
-  </div>
-</div>
-
 </header>
 
-  <div class="drawer drawer--left">
+  <main>
+    <div class="container">
+        <div class="bread">
+  <ol class="bread__list">
+    <li><a href="../">トップページ</a></li>
+    <li><h1><span>動きテンプレ</span></h1></li>
+  </ol>
+</div>
+
+    </div>
+    <div class="container">
+        <article class="section-sepalator js-col-wrapper is-2-col js-modal-wrapper">
+  <div class="heading">
+    <h2 class="heading__title">カラム数切り替え</h2>
+    <div class="code-open"><button class="js-modal-trigger">code<span><span class="report"></span>
+</span></button></div>
+  </div>
+  <section class="sample">
+    <div class="sample__head"><h2>SAMPLE</h2></div>
+    <div class="column-change-trigger">
+      <button class="column-change-btn js-col-trigger is-selected" data-col="2">
+        <ul class="icon-tile">
+  <li></li>
+  <li></li>
+  <li></li>
+  <li></li>
+</ul>
+
+      </button>
+      <button class="column-change-btn js-col-trigger" data-col="3">
+        <ul class="icon-tile icon-tile--3-col">
+  <li></li>
+  <li></li>
+  <li></li>
+  <li></li>
+  <li></li>
+  <li></li>
+  <li></li>
+  <li></li>
+  <li></li>
+</ul>
+
+      </button>
+    </div>
+    <ul class="column-change-list">
+      <li><a href=""><div class="square"><div class="square__body"></div></a></li>
+      <li><a href=""><div class="square"><div class="square__body"></div></a></li>
+      <li><a href=""><div class="square"><div class="square__body"></div></a></li>
+      <li><a href=""><div class="square"><div class="square__body"></div></a></li>
+      <li><a href=""><div class="square"><div class="square__body"></div></a></li>
+      <li><a href=""><div class="square"><div class="square__body"></div></a></li>
+      <li><a href=""><div class="square"><div class="square__body"></div></a></li>
+      <li><a href=""><div class="square"><div class="square__body"></div></a></li>
+    </ul>
+  </section>
+
+<div class="modal">
+  <div class="modal__body">
+    <div class="code js-modal-body js-tab-wrapper">
+      <div class="code__action">
+        <ul class="code-tab">
+          <li class="code-tab__trigger js-tab-trigger is-selected" id="section1-tab-html" role="tab" aria-selected="true" aria-controls="section1-content-html" data-tab="1">
+            <button>html</button>
+          </li>
+          <li class="code-tab__trigger js-tab-trigger" id="section1-tab-sass" role="tab" aria-selected="" aria-controls="section1-content-sass" data-tab="2">
+            <button>sass</button>
+          </li>
+        </ul>
+        <div class="code-close js-modal-close">
+          <span class="close"></span>
+
+        </div>
+      </div>
+      <ul class="code__main">
+        <li class="tab-content js-tab-contents is-active" role="tabpanel" id="section1-content-html" aria-labelledby="section1-tab-html" data-tab="1">
+          <section class="code-card">
+            <h2 class="code-card__head">html</h2>
+            <p class="code-card__text">
+              <span></span>
+              <span>&lt;div&nbsp;&nbsp;class=&quot;js-col-wrapper&nbsp;&nbsp;is-2-col&quot;&gt;</span>
+              <span>&nbsp;&nbsp;&nbsp;&nbsp;&lt;div&gt;</span>
+              <span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;button&nbsp;&nbsp;class=&quot;column-change-btn&nbsp;&nbsp;js-col-trigger&nbsp;&nbsp;is-selected&quot;&nbsp;&nbsp;data-col=&quot;2&quot;&gt;button&lt;/button&gt;</span>
+              <span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;button&nbsp;&nbsp;class=&quot;column-change-btn&nbsp;&nbsp;js-col-trigger&quot;&nbsp;&nbsp;data-col=&quot;3&quot;&gt;button&lt;/button&gt;</span>
+              <span>&nbsp;&nbsp;&nbsp;&nbsp;&lt;/div&gt;</span>
+              <span>&nbsp;&nbsp;&nbsp;&nbsp;&lt;ul&nbsp;&nbsp;class=&quot;column-change-list&quot;&gt;</span>
+              <span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;li&gt;content&lt;/li&gt;</span>
+              <span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;li&gt;content&lt;/li&gt;</span>
+              <span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;li&gt;content&lt;/li&gt;</span>
+              <span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;li&gt;content&lt;/li&gt;</span>
+              <span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;li&gt;content&lt;/li&gt;</span>
+              <span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;li&gt;content&lt;/li&gt;</span>
+              <span>&nbsp;&nbsp;&nbsp;&nbsp;&lt;/ul&gt;</span>
+              <span>&lt;/div&gt;</span>
+              <span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>
+            </p>
+          </section>
+        </li>
+        <li class="tab-content js-tab-contents" role="tabpanel" id="section1-content-sass" aria-labelledby="section1-tab-sass" data-tab="2">
+          <section class="code-card">
+            <h2 class="code-card__head">sass</h2>
+            <p class="code-card__text">
+              <span>コード</span>
+            </p>
+          </section>
+        </li>
+      </ul>
+    </div>
+  </div>
+</div>
+
+</article>
+
+        <article class="section-sepalator js-modal-wrapper">
+  <div class="heading">
+    <h2 class="heading__title">もっと見る</h2>
+    <div class="code-open"><button class="js-modal-trigger">code<span><span class="report"></span>
+</span></button></div>
+  </div>
+  <section class="sample">
+      <div class="sample__head"><h2>SAMPLE</h2></div>
+      <div class="more js-more-wrapper is-more-close">
+        <ul class="more__list">
+          <li><a href=""><div class="square"><div class="square__body"></div></a></li>
+          <li><a href=""><div class="square"><div class="square__body"></div></a></li>
+          <li><a href=""><div class="square"><div class="square__body"></div></a></li>
+          <li><a href=""><div class="square"><div class="square__body"></div></a></li>
+          <li><a href=""><div class="square"><div class="square__body"></div></a></li>
+          <li><a href=""><div class="square"><div class="square__body"></div></a></li>
+          <li><a href=""><div class="square"><div class="square__body"></div></a></li>
+          <li><a href=""><div class="square"><div class="square__body"></div></a></li>
+          <li><a href=""><div class="square"><div class="square__body"></div></a></li>
+          <li><a href=""><div class="square"><div class="square__body"></div></a></li>
+          <li><a href=""><div class="square"><div class="square__body"></div></a></li>
+          <li><a href=""><div class="square"><div class="square__body"></div></a></li>
+          <li><a href=""><div class="square"><div class="square__body"></div></a></li>
+          <li><a href=""><div class="square"><div class="square__body"></div></a></li>
+          <li><a href=""><div class="square"><div class="square__body"></div></a></li>
+          <li><a href=""><div class="square"><div class="square__body"></div></a></li>
+          <li><a href=""><div class="square"><div class="square__body"></div></a></li>
+          <li><a href=""><div class="square"><div class="square__body"></div></a></li>
+        </ul>
+        <div class="more__btn">
+          <button class="js-more-trigger">
+            <span class="more__open">OPEN</span>
+            <span class="more__close">CLOSE</span>
+          </button>
+        </div>
+      </div>
+  </section>
+<div class="modal">
+  <div class="modal__body">
+    <div class="code js-modal-body js-tab-wrapper">
+      <div class="code__action">
+        <ul class="code-tab">
+          <li class="code-tab__trigger js-tab-trigger is-selected" id="section1-tab-html" role="tab" aria-selected="true" aria-controls="section1-content-html" data-tab="1">
+            <button>html</button>
+          </li>
+          <li class="code-tab__trigger js-tab-trigger" id="section1-tab-sass" role="tab" aria-selected="" aria-controls="section1-content-sass" data-tab="2">
+            <button>sass</button>
+          </li>
+        </ul>
+        <div class="code-close js-modal-close">
+          <span class="close"></span>
+
+        </div>
+      </div>
+      <ul class="code__main">
+        <li class="tab-content js-tab-contents is-active" role="tabpanel" id="section1-content-html" aria-labelledby="section1-tab-html" data-tab="1">
+          <section class="code-card">
+            <h2 class="code-card__head">html</h2>
+            <p class="code-card__text">
+              <span></span>
+              <span>&lt;div&nbsp;&nbsp;class=&quot;js-col-wrapper&nbsp;&nbsp;is-2-col&quot;&gt;</span>
+              <span>&nbsp;&nbsp;&nbsp;&nbsp;&lt;div&gt;</span>
+              <span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;button&nbsp;&nbsp;class=&quot;column-change-btn&nbsp;&nbsp;js-col-trigger&nbsp;&nbsp;is-selected&quot;&nbsp;&nbsp;data-col=&quot;2&quot;&gt;button&lt;/button&gt;</span>
+              <span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;button&nbsp;&nbsp;class=&quot;column-change-btn&nbsp;&nbsp;js-col-trigger&quot;&nbsp;&nbsp;data-col=&quot;3&quot;&gt;button&lt;/button&gt;</span>
+              <span>&nbsp;&nbsp;&nbsp;&nbsp;&lt;/div&gt;</span>
+              <span>&nbsp;&nbsp;&nbsp;&nbsp;&lt;ul&nbsp;&nbsp;class=&quot;column-change-list&quot;&gt;</span>
+              <span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;li&gt;content&lt;/li&gt;</span>
+              <span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;li&gt;content&lt;/li&gt;</span>
+              <span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;li&gt;content&lt;/li&gt;</span>
+              <span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;li&gt;content&lt;/li&gt;</span>
+              <span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;li&gt;content&lt;/li&gt;</span>
+              <span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;li&gt;content&lt;/li&gt;</span>
+              <span>&nbsp;&nbsp;&nbsp;&nbsp;&lt;/ul&gt;</span>
+              <span>&lt;/div&gt;</span>
+              <span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>
+            </p>
+          </section>
+        </li>
+        <li class="tab-content js-tab-contents" role="tabpanel" id="section1-content-sass" aria-labelledby="section1-tab-sass" data-tab="2">
+          <section class="code-card">
+            <h2 class="code-card__head">sass</h2>
+            <p class="code-card__text">
+              <span>コード</span>
+            </p>
+          </section>
+        </li>
+      </ul>
+    </div>
+  </div>
+</div>
+
+</article>
+
+        <article class="section-sepalator js-modal-wrapper">
+  <div class="heading">
+    <h2 class="heading__title">スクロールでスライドイン</h2>
+    <div class="code-open"><button class="js-modal-trigger">code<span><span class="report"></span>
+</span></button></div>
+  </div>
+  <section class="sample">
+    <div class="sample__head"><h2>SAMPLE</h2></div>
+    <div class="slide-in">
+      <ul>
+        <li class="slide-in__content js-slide-in">content1</li>
+        <li class="slide-in__content js-slide-in">content2</li>
+        <li class="slide-in__content js-slide-in">content3</li>
+        <li class="slide-in__content js-slide-in">content4</li>
+      </ul>
+    </div>
+  </section>
+
+  <div class="modal">
+  <div class="modal__body">
+    <div class="code js-modal-body js-tab-wrapper">
+      <div class="code__action">
+        <ul class="code-tab">
+          <li class="code-tab__trigger js-tab-trigger is-selected" id="section1-tab-html" role="tab" aria-selected="true" aria-controls="section1-content-html" data-tab="1">
+            <button>html</button>
+          </li>
+          <li class="code-tab__trigger js-tab-trigger" id="section1-tab-sass" role="tab" aria-selected="" aria-controls="section1-content-sass" data-tab="2">
+            <button>sass</button>
+          </li>
+        </ul>
+        <div class="code-close js-modal-close">
+          <span class="close"></span>
+
+        </div>
+      </div>
+      <ul class="code__main">
+        <li class="tab-content js-tab-contents is-active" role="tabpanel" id="section1-content-html" aria-labelledby="section1-tab-html" data-tab="1">
+          <section class="code-card">
+            <h2 class="code-card__head">html</h2>
+            <p class="code-card__text">
+              <span></span>
+              <span>&lt;div&nbsp;&nbsp;class=&quot;js-col-wrapper&nbsp;&nbsp;is-2-col&quot;&gt;</span>
+              <span>&nbsp;&nbsp;&nbsp;&nbsp;&lt;div&gt;</span>
+              <span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;button&nbsp;&nbsp;class=&quot;column-change-btn&nbsp;&nbsp;js-col-trigger&nbsp;&nbsp;is-selected&quot;&nbsp;&nbsp;data-col=&quot;2&quot;&gt;button&lt;/button&gt;</span>
+              <span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;button&nbsp;&nbsp;class=&quot;column-change-btn&nbsp;&nbsp;js-col-trigger&quot;&nbsp;&nbsp;data-col=&quot;3&quot;&gt;button&lt;/button&gt;</span>
+              <span>&nbsp;&nbsp;&nbsp;&nbsp;&lt;/div&gt;</span>
+              <span>&nbsp;&nbsp;&nbsp;&nbsp;&lt;ul&nbsp;&nbsp;class=&quot;column-change-list&quot;&gt;</span>
+              <span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;li&gt;content&lt;/li&gt;</span>
+              <span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;li&gt;content&lt;/li&gt;</span>
+              <span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;li&gt;content&lt;/li&gt;</span>
+              <span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;li&gt;content&lt;/li&gt;</span>
+              <span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;li&gt;content&lt;/li&gt;</span>
+              <span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;li&gt;content&lt;/li&gt;</span>
+              <span>&nbsp;&nbsp;&nbsp;&nbsp;&lt;/ul&gt;</span>
+              <span>&lt;/div&gt;</span>
+              <span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>
+            </p>
+          </section>
+        </li>
+        <li class="tab-content js-tab-contents" role="tabpanel" id="section1-content-sass" aria-labelledby="section1-tab-sass" data-tab="2">
+          <section class="code-card">
+            <h2 class="code-card__head">sass</h2>
+            <p class="code-card__text">
+              <span>コード</span>
+            </p>
+          </section>
+        </li>
+      </ul>
+    </div>
+  </div>
+</div>
+
+</article>
+
+        <article class="section-sepalator js-tab-wrapper js-modal-wrapper">
+  <div class="heading">
+    <h2 class="heading__title">タブ切り替え</h2>
+    <div class="code-open"><button class="js-modal-trigger">code<span><span class="report"></span>
+</span></button></div>
+  </div>
+  <section class="sample">
+    <div class="sample__head"><h2>SAMPLE</h2></div>
+    <ul class="tab-btn-list">
+      <li><button class="tab-btn red-tab js-tab-trigger is-selected" data-tab="tab-1">tab1</button></li>
+      <li><button class="tab-btn green-tab js-tab-trigger" data-tab="tab-2">tab2</button></li>
+      <li><button class="tab-btn blue-tab js-tab-trigger" data-tab="tab-3">tab3</button></li>
+    </ul>
+    <ul class="tab-contents-list">
+      <li class="tab-content js-tab-contents is-active" data-tab="tab-1">
+        <div class="tab-card red-tab">
+          <p>content1</p>
+        </div>
+      </li>
+      <li class="tab-content js-tab-contents" data-tab="tab-2">
+        <div class="tab-card green-tab">
+          <p>content1</p>
+        </div>
+      </li>
+      <li class="tab-content js-tab-contents" data-tab="tab-3">
+        <div class="tab-card blue-tab">
+          <p>content3</p>
+        </div>
+      </li>
+    </ul>
+  </section>
+
+  <div class="modal">
+  <div class="modal__body">
+    <div class="code js-modal-body js-tab-wrapper">
+      <div class="code__action">
+        <ul class="code-tab">
+          <li class="code-tab__trigger js-tab-trigger is-selected" id="section1-tab-html" role="tab" aria-selected="true" aria-controls="section1-content-html" data-tab="1">
+            <button>html</button>
+          </li>
+          <li class="code-tab__trigger js-tab-trigger" id="section1-tab-sass" role="tab" aria-selected="" aria-controls="section1-content-sass" data-tab="2">
+            <button>sass</button>
+          </li>
+        </ul>
+        <div class="code-close js-modal-close">
+          <span class="close"></span>
+
+        </div>
+      </div>
+      <ul class="code__main">
+        <li class="tab-content js-tab-contents is-active" role="tabpanel" id="section1-content-html" aria-labelledby="section1-tab-html" data-tab="1">
+          <section class="code-card">
+            <h2 class="code-card__head">html</h2>
+            <p class="code-card__text">
+              <span></span>
+              <span>&lt;div&nbsp;&nbsp;class=&quot;js-col-wrapper&nbsp;&nbsp;is-2-col&quot;&gt;</span>
+              <span>&nbsp;&nbsp;&nbsp;&nbsp;&lt;div&gt;</span>
+              <span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;button&nbsp;&nbsp;class=&quot;column-change-btn&nbsp;&nbsp;js-col-trigger&nbsp;&nbsp;is-selected&quot;&nbsp;&nbsp;data-col=&quot;2&quot;&gt;button&lt;/button&gt;</span>
+              <span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;button&nbsp;&nbsp;class=&quot;column-change-btn&nbsp;&nbsp;js-col-trigger&quot;&nbsp;&nbsp;data-col=&quot;3&quot;&gt;button&lt;/button&gt;</span>
+              <span>&nbsp;&nbsp;&nbsp;&nbsp;&lt;/div&gt;</span>
+              <span>&nbsp;&nbsp;&nbsp;&nbsp;&lt;ul&nbsp;&nbsp;class=&quot;column-change-list&quot;&gt;</span>
+              <span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;li&gt;content&lt;/li&gt;</span>
+              <span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;li&gt;content&lt;/li&gt;</span>
+              <span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;li&gt;content&lt;/li&gt;</span>
+              <span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;li&gt;content&lt;/li&gt;</span>
+              <span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;li&gt;content&lt;/li&gt;</span>
+              <span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;li&gt;content&lt;/li&gt;</span>
+              <span>&nbsp;&nbsp;&nbsp;&nbsp;&lt;/ul&gt;</span>
+              <span>&lt;/div&gt;</span>
+              <span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>
+            </p>
+          </section>
+        </li>
+        <li class="tab-content js-tab-contents" role="tabpanel" id="section1-content-sass" aria-labelledby="section1-tab-sass" data-tab="2">
+          <section class="code-card">
+            <h2 class="code-card__head">sass</h2>
+            <p class="code-card__text">
+              <span>コード</span>
+            </p>
+          </section>
+        </li>
+      </ul>
+    </div>
+  </div>
+</div>
+
+</article>
+
+    </div>
+  </main>
+  <div class="drawer drawer--header drawer--left">
   <div class="drawer__slide js-slide-wrapper">
-    <div class="side-menu">
+    <nav class="side-menu">
       <p class="side-leave">
         <a class="right-arrow-end right-arrow-end--white" href="">
-          <span class="side-leave__icon"><img src="../img/mochimochimoon.png" alt="mochimochimoon"></span>
+          <span class="side-leave_icon">
+            <img src="../img/mochimochimoon.png" alt="mochimochimoon">
+          </span>
           <span class="side-leave__text">my-workにもどる</span>
         </a>
       </p>
@@ -92,141 +443,31 @@
           </a>
         </dd>
       </dl>
+    </nav>
+  </div>
+</div>
+
+<div class="drawer drawer--header drawer--down">
+  <div class="drawer__slide js-slide-wrapper">
+    <div class="down-menu">
+      <p>MENU(仮)</p>
     </div>
   </div>
 </div>
 
-  <main>
-    <div class="container">
-      <div class="bread">
-  <ul class="bread__list">
-    <li><a href="../">トップページ</a></li>
-    <li><span>動きテンプレ</span</li>
-  </ul>
-</div>
+<div class="modal">
+  <div class="modal-card">
+    <div class="menu-head">
+      <p class="menu-head__heading">MENU</p>
+      <div class="menu-head__close">
+        <span class="close"></span>
 
-    </div>
-    <div class="hero"></div>
-    <div class="container">
-        <div class="section-sepalator js-col-wrapper is-2-col">
-  <div class="heading">
-    <h2>カラム数切り替え</h2>
-  </div>
-  <div class="column-change-trigger">
-    <button class="column-change-btn js-col-trigger is-selected" data-col="2">
-      <ul class="icon-tile">
-  <li></li>
-  <li></li>
-  <li></li>
-  <li></li>
-</ul>
-
-    </button>
-    <button class="column-change-btn js-col-trigger" data-col="3">
-      <ul class="icon-tile icon-tile--3-col">
-  <li></li>
-  <li></li>
-  <li></li>
-  <li></li>
-  <li></li>
-  <li></li>
-  <li></li>
-  <li></li>
-  <li></li>
-</ul>
-
-    </button>
-  </div>
-  <ul class="column-change-list">
-    <li><a href=""><div class="square"><div class="square__body"></div></a></li>
-    <li><a href=""><div class="square"><div class="square__body"></div></a></li>
-    <li><a href=""><div class="square"><div class="square__body"></div></a></li>
-    <li><a href=""><div class="square"><div class="square__body"></div></a></li>
-    <li><a href=""><div class="square"><div class="square__body"></div></a></li>
-    <li><a href=""><div class="square"><div class="square__body"></div></a></li>
-    <li><a href=""><div class="square"><div class="square__body"></div></a></li>
-    <li><a href=""><div class="square"><div class="square__body"></div></a></li>
-  </ul>
-</div>
-
-        <div class="section-sepalator">
-  <div class="heading">
-    <h2>もっと見る</h2>
-  </div>
-  <div class="more js-more-wrapper is-more-close">
-    <ul class="more__list">
-      <li><a href=""><div class="square"><div class="square__body"></div></a></li>
-      <li><a href=""><div class="square"><div class="square__body"></div></a></li>
-      <li><a href=""><div class="square"><div class="square__body"></div></a></li>
-      <li><a href=""><div class="square"><div class="square__body"></div></a></li>
-      <li><a href=""><div class="square"><div class="square__body"></div></a></li>
-      <li><a href=""><div class="square"><div class="square__body"></div></a></li>
-      <li><a href=""><div class="square"><div class="square__body"></div></a></li>
-      <li><a href=""><div class="square"><div class="square__body"></div></a></li>
-      <li><a href=""><div class="square"><div class="square__body"></div></a></li>
-      <li><a href=""><div class="square"><div class="square__body"></div></a></li>
-      <li><a href=""><div class="square"><div class="square__body"></div></a></li>
-      <li><a href=""><div class="square"><div class="square__body"></div></a></li>
-      <li><a href=""><div class="square"><div class="square__body"></div></a></li>
-      <li><a href=""><div class="square"><div class="square__body"></div></a></li>
-      <li><a href=""><div class="square"><div class="square__body"></div></a></li>
-      <li><a href=""><div class="square"><div class="square__body"></div></a></li>
-      <li><a href=""><div class="square"><div class="square__body"></div></a></li>
-      <li><a href=""><div class="square"><div class="square__body"></div></a></li>
-    </ul>
-    <div class="more__btn">
-      <button class="js-more-trigger">
-        <span class="more__open">OPEN</span>
-        <span class="more__close">CLOSE</span>
-      </button>
-    </div>
-  </div>
-</div>
-
-        <div class="section-sepalator">
-  <div class="heading">
-    <h2>スクロールでスライドイン</h2>
-  </div>
-  <div class="slide-in">
-    <ul>
-      <li class="slide-in__content js-slide-in">content1</li>
-      <li class="slide-in__content js-slide-in">content2</li>
-      <li class="slide-in__content js-slide-in">content3</li>
-      <li class="slide-in__content js-slide-in">content4</li>
-    </ul>
-  </div>
-</div>
-
-        <div class="section-sepalator js-tab-wrapper">
-  <div class="heading">
-    <h2>タブ切り替え</h2>
-  </div>
-  <ul class="tab-btn-list">
-    <li><button class="tab-btn red-tab js-tab-trigger is-selected" data-tab-number="tab-1">tab1</button></li>
-    <li><button class="tab-btn green-tab js-tab-trigger" data-tab-number="tab-2">tab2</button></li>
-    <li><button class="tab-btn blue-tab js-tab-trigger" data-tab-number="tab-3">tab3</button></li>
-  </ul>
-  <ul class="tab-contents-list">
-    <li class="js-tab-contents is-active" data-tab-number="tab-1">
-      <div class="tab-card red-tab">
-        <p>content1</p>
       </div>
-    </li>
-    <li class="js-tab-contents" data-tab-number="tab-2">
-      <div class="tab-card green-tab">
-        <p>content1</p>
-      </div>
-    </li>
-    <li class="js-tab-contents" data-tab-number="tab-3">
-      <div class="tab-card blue-tab">
-        <p>content3</p>
-      </div>
-    </li>
-  </ul>
+    </div>
+  </div>
 </div>
 
-    </div>
-  </main>
+
   <footer class="footer js-pagetop-reference">
   <div class="container">
     <div class="pagetop">

@@ -77,9 +77,9 @@
   $('.js-tab-trigger').on('click', function () {
     var $trigger = $(this);
     if (!$trigger.hasClass('is-selected')) {
-      var number = $trigger.attr('data-tab-number');
+      var number = $trigger.attr('data-tab');
       var $wrapper = $trigger.closest('.js-tab-wrapper');
-      var targetSelector = '.js-tab-contents[data-tab-number="' + number + '"]';
+      var targetSelector = '.js-tab-contents[data-tab="' + number + '"]';
       var $target = $wrapper.find(targetSelector);
       $wrapper.find('.js-tab-trigger.is-selected').removeClass('is-selected');
       $trigger.addClass('is-selected');
@@ -127,16 +127,17 @@
 
   // Side Drawer
   (function () {
+    // MENU閉じる関数
     var menuCloseAll = function menuCloseAll() {
       $body.removeClass(function (index, className) {
-        return (className.match(/\bis-menu-active\S+/g) || []).join(' ');
+        return (className.match(/\bis-open-menu\S+/g) || []).join(' ');
       });
       $body.removeClass('is-no-scroll');
       $('.js-menu-trigger').removeClass('is-active');
     };
-
+    // トリガーで展開
     $('.js-menu-trigger').on('click', function () {
-      var activeClass = $(this).attr('data-active-class');
+      var activeClass = 'is-open-menu-' + $(this).attr('data-target-menu');
       var isMenuActive = $body.hasClass(activeClass);
       menuCloseAll();
       if (!isMenuActive) {
@@ -148,7 +149,27 @@
     });
     $('body').on('click', function (e) {
       if (!$(e.target).closest('.js-slide-wrapper').length) {
-        menuCloseAll();
+        if (!$(e.target).closest('.header').length) {
+          menuCloseAll();
+        }
+      }
+    });
+  })();
+
+  // Modal
+  (function () {
+    // トリガーで展開
+    $('.js-modal-trigger').on('click', function () {
+      $(this).closest('.js-modal-wrapper').toggleClass('is-open-modal');
+      return false;
+    });
+    $('.js-modal-close').on('click', function () {
+      $('.is-open-modal').removeClass('is-open-modal');
+      return false;
+    });
+    $('body').on('click', function (e) {
+      if (!$(e.target).closest('.js-modal-body').length) {
+        $('.is-open-modal').removeClass('is-open-modal');
       }
     });
   })();
