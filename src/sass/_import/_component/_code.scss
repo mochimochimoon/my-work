@@ -1,0 +1,22 @@
+.code {
+  box-sizing: border-box;
+  height: 100%;
+  padding: 16px;
+  border-radius: 8px;
+  background-color: #888;
+  color: #fff;
+  &__head {
+    display: flex;
+    justify-content: space-between;
+    padding-bottom: 8px;
+    border-bottom: #fff solid 1px;
+    > h2 {
+      font-size: 16px;
+      line-height: 1;
+    }
+  }
+  &__close {
+    width: 16px;
+    height: 16px;
+  }
+}
