@@ -31,16 +31,20 @@ const data = {
 -%>
 <article class="section-sepalator js-modal-wrapper">
   <div class="heading">
-    <h3>スクロールでスライドイン</h3>
-    <div class="js-modal-trigger">code</div>
+    <h2 class="heading__title">スクロールでスライドイン</h2>
+    <div class="code-open"><button class="js-modal-trigger">code<span><% include /ejs/_icon/_report %></span></button></div>
   </div>
-  <div class="slide-in">
-    <ul>
-      <li class="slide-in__content js-slide-in">content1</li>
-      <li class="slide-in__content js-slide-in">content2</li>
-      <li class="slide-in__content js-slide-in">content3</li>
-      <li class="slide-in__content js-slide-in">content4</li>
-    </ul>
-  </div>
+  <section class="sample">
+    <div class="sample__head"><h2>SAMPLE</h2></div>
+    <div class="slide-in">
+      <ul>
+        <li class="slide-in__content js-slide-in">content1</li>
+        <li class="slide-in__content js-slide-in">content2</li>
+        <li class="slide-in__content js-slide-in">content3</li>
+        <li class="slide-in__content js-slide-in">content4</li>
+      </ul>
+    </div>
+  </section>
+
   <%- include('/ejs/_components/_modal-code', {data: data}) %>
 </article>

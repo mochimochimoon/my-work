@@ -16,7 +16,7 @@
     background-color: #666;
     color: #fff;
     padding: 8px;
-    overflow-y: scroll;
+    overflow: scroll;
   }
 }
 
@@ -57,6 +57,8 @@
     font-style: italic;
     >span {
       display: block;
+      white-space: nowrap;
+      margin-bottom: 0.5em;
     }
   }
 }

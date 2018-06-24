@@ -31,30 +31,34 @@ const data = {
 -%>
 <article class="section-sepalator js-tab-wrapper js-modal-wrapper">
   <div class="heading">
-    <h3>タブ切り替え</h3>
-    <div class="js-modal-trigger">code</div>
+    <h2 class="heading__title">タブ切り替え</h2>
+    <div class="code-open"><button class="js-modal-trigger">code<span><% include /ejs/_icon/_report %></span></button></div>
   </div>
-  <ul class="tab-btn-list">
-    <li><button class="tab-btn red-tab js-tab-trigger is-selected" data-tab="tab-1">tab1</button></li>
-    <li><button class="tab-btn green-tab js-tab-trigger" data-tab="tab-2">tab2</button></li>
-    <li><button class="tab-btn blue-tab js-tab-trigger" data-tab="tab-3">tab3</button></li>
-  </ul>
-  <ul class="tab-contents-list">
-    <li class="js-tab-contents is-active" data-tab="tab-1">
-      <div class="tab-card red-tab">
-        <p>content1</p>
-      </div>
-    </li>
-    <li class="js-tab-contents" data-tab="tab-2">
-      <div class="tab-card green-tab">
-        <p>content1</p>
-      </div>
-    </li>
-    <li class="js-tab-contents" data-tab="tab-3">
-      <div class="tab-card blue-tab">
-        <p>content3</p>
-      </div>
-    </li>
-  </ul>
+  <section class="sample">
+    <div class="sample__head"><h2>SAMPLE</h2></div>
+    <ul class="tab-btn-list">
+      <li><button class="tab-btn red-tab js-tab-trigger is-selected" data-tab="tab-1">tab1</button></li>
+      <li><button class="tab-btn green-tab js-tab-trigger" data-tab="tab-2">tab2</button></li>
+      <li><button class="tab-btn blue-tab js-tab-trigger" data-tab="tab-3">tab3</button></li>
+    </ul>
+    <ul class="tab-contents-list">
+      <li class="js-tab-contents is-active" data-tab="tab-1">
+        <div class="tab-card red-tab">
+          <p>content1</p>
+        </div>
+      </li>
+      <li class="js-tab-contents" data-tab="tab-2">
+        <div class="tab-card green-tab">
+          <p>content1</p>
+        </div>
+      </li>
+      <li class="js-tab-contents" data-tab="tab-3">
+        <div class="tab-card blue-tab">
+          <p>content3</p>
+        </div>
+      </li>
+    </ul>
+  </section>
+
   <%- include('/ejs/_components/_modal-code', {data: data}) %>
 </article>

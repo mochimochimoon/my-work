@@ -31,26 +31,30 @@ const data = {
 -%>
 <article class="section-sepalator js-col-wrapper is-2-col js-modal-wrapper">
   <div class="heading">
-    <h3>カラム数切り替え</h3>
-    <div class="js-modal-trigger">code</div>
+    <h2 class="heading__title">カラム数切り替え</h2>
+    <div class="code-open"><button class="js-modal-trigger">code<span><% include /ejs/_icon/_report %></span></button></div>
   </div>
-  <div class="column-change-trigger">
-    <button class="column-change-btn js-col-trigger is-selected" data-col="2">
-      <% include /ejs/_icon/_tile-2 %>
-    </button>
-    <button class="column-change-btn js-col-trigger" data-col="3">
-      <% include /ejs/_icon/_tile-3 %>
-    </button>
-  </div>
-  <ul class="column-change-list">
-    <li><a href=""><div class="square"><div class="square__body"></div></a></li>
-    <li><a href=""><div class="square"><div class="square__body"></div></a></li>
-    <li><a href=""><div class="square"><div class="square__body"></div></a></li>
-    <li><a href=""><div class="square"><div class="square__body"></div></a></li>
-    <li><a href=""><div class="square"><div class="square__body"></div></a></li>
-    <li><a href=""><div class="square"><div class="square__body"></div></a></li>
-    <li><a href=""><div class="square"><div class="square__body"></div></a></li>
-    <li><a href=""><div class="square"><div class="square__body"></div></a></li>
-  </ul>
+  <section class="sample">
+    <div class="sample__head"><h2>SAMPLE</h2></div>
+    <div class="column-change-trigger">
+      <button class="column-change-btn js-col-trigger is-selected" data-col="2">
+        <% include /ejs/_icon/_tile-2 %>
+      </button>
+      <button class="column-change-btn js-col-trigger" data-col="3">
+        <% include /ejs/_icon/_tile-3 %>
+      </button>
+    </div>
+    <ul class="column-change-list">
+      <li><a href=""><div class="square"><div class="square__body"></div></a></li>
+      <li><a href=""><div class="square"><div class="square__body"></div></a></li>
+      <li><a href=""><div class="square"><div class="square__body"></div></a></li>
+      <li><a href=""><div class="square"><div class="square__body"></div></a></li>
+      <li><a href=""><div class="square"><div class="square__body"></div></a></li>
+      <li><a href=""><div class="square"><div class="square__body"></div></a></li>
+      <li><a href=""><div class="square"><div class="square__body"></div></a></li>
+      <li><a href=""><div class="square"><div class="square__body"></div></a></li>
+    </ul>
+  </section>
+
 <%- include('/ejs/_components/_modal-code', {data: data}) %>
 </article>

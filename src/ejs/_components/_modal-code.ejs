@@ -43,7 +43,7 @@ for (var i = 0; i < codes.length; i++){
   }
 -%>
         <li class="tab-content js-tab-contents<%= active %>" role="tabpanel" id="<%= data.name %>-content-<%= c.type %>" aria-labelledby="<%= data.name %>-tab-<%= c.type %>" data-tab="<%= i + 1 %>">
-          <div class="code-card">
+          <section class="code-card">
             <h2 class="code-card__head"><%= c.type %></h2>
             <p class="code-card__text">
 <%
@@ -55,7 +55,7 @@ for (var i = 0; i < codes.length; i++){
   }
 -%>
             </p>
-          </div>
+          </section>
         </li>
 <%
 }
