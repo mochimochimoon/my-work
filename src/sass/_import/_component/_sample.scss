@@ -1,0 +1,12 @@
+.sample {
+  text-align: center;
+  &__head {
+    display: inline-block;
+    color: #ccc;
+    padding: 0px 8px 4px;
+    margin-bottom: 16px;
+    border-bottom: #ccc solid 1px;
+    font-size: 0.75em;
+    font-weight: bold;
+  }
+}

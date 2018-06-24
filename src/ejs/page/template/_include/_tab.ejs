@@ -1,27 +1,64 @@
-<article class="section-sepalator js-tab-wrapper">
-  <div class="heading">
-    <h3>タブ切り替え</h3>
+<%
+const data = {
+  "japanese": "カラム切り替え",
+  "name": "section1",
+  "codes": [
+    {
+      "type": "html",
+      "txt": `
+<div class="js-col-wrapper is-2-col">
+  <div>
+    <button class="column-change-btn js-col-trigger is-selected" data-col="2">button</button>
+    <button class="column-change-btn js-col-trigger" data-col="3">button</button>
   </div>
-  <ul class="tab-btn-list">
-    <li><button class="tab-btn red-tab js-tab-trigger is-selected" data-tab-number="tab-1">tab1</button></li>
-    <li><button class="tab-btn green-tab js-tab-trigger" data-tab-number="tab-2">tab2</button></li>
-    <li><button class="tab-btn blue-tab js-tab-trigger" data-tab-number="tab-3">tab3</button></li>
+  <ul class="column-change-list">
+    <li>content</li>
+    <li>content</li>
+    <li>content</li>
+    <li>content</li>
+    <li>content</li>
+    <li>content</li>
   </ul>
-  <ul class="tab-contents-list">
-    <li class="js-tab-contents is-active" data-tab-number="tab-1">
-      <div class="tab-card red-tab">
-        <p>content1</p>
-      </div>
-    </li>
-    <li class="js-tab-contents" data-tab-number="tab-2">
-      <div class="tab-card green-tab">
-        <p>content1</p>
-      </div>
-    </li>
-    <li class="js-tab-contents" data-tab-number="tab-3">
-      <div class="tab-card blue-tab">
-        <p>content3</p>
-      </div>
-    </li>
-  </ul>
+</div>
+        `
+    },
+    {
+      "type": "sass",
+      "txt": "コード"
+    }
+  ]
+}
+-%>
+<article class="section-sepalator js-tab-wrapper js-modal-wrapper">
+  <div class="heading">
+    <h2 class="heading__title">タブ切り替え</h2>
+    <div class="code-open"><button class="js-modal-trigger">code<span><% include /ejs/_icon/_report %></span></button></div>
+  </div>
+  <section class="sample">
+    <div class="sample__head"><h2>SAMPLE</h2></div>
+    <ul class="tab-btn-list">
+      <li><button class="tab-btn red-tab js-tab-trigger is-selected" data-tab="tab-1">tab1</button></li>
+      <li><button class="tab-btn green-tab js-tab-trigger" data-tab="tab-2">tab2</button></li>
+      <li><button class="tab-btn blue-tab js-tab-trigger" data-tab="tab-3">tab3</button></li>
+    </ul>
+    <ul class="tab-contents-list">
+      <li class="tab-content js-tab-contents is-active" data-tab="tab-1">
+        <div class="tab-card red-tab">
+          <p>content1</p>
+        </div>
+      </li>
+      <li class="tab-content js-tab-contents" data-tab="tab-2">
+        <div class="tab-card green-tab">
+          <p>content1</p>
+        </div>
+      </li>
+      <li class="tab-content js-tab-contents" data-tab="tab-3">
+        <div class="tab-card blue-tab">
+          <p>content3</p>
+        </div>
+      </li>
+    </ul>
+  </section>
+
+  <%- include('/ejs/_components/_modal-code', {data: data}) %>
 </article>

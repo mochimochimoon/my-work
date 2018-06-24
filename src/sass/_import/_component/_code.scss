@@ -1,0 +1,64 @@
+.code {
+  display: flex;
+  flex-direction: column;
+  box-sizing: border-box;
+  height: 100%;
+  padding: 16px;
+  border-radius: 8px;
+  background-color: rgba( #ccc, .8);
+  &__action {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 16px;
+  }
+  &__main {
+    flex-grow: 1;
+    background-color: #666;
+    color: #fff;
+    padding: 8px;
+    overflow: scroll;
+  }
+}
+
+.code-tab {
+  display: flex;
+  &__trigger {
+    flex-grow: 0;
+    > button {
+      display: block;
+      padding: 4px 8px;
+      font-size: 14px;
+      color: #fff;
+      background-color: #aaa;
+      border-radius: 5px;
+      margin-right: 8px;
+    }
+    &.is-selected > button {
+      background-color: #aaf;
+    }
+  }
+}
+
+.code-close {
+  flex-grow: 0;
+  width: 16px;
+  height: 16px;
+  cursor: pointer;
+}
+
+.code-card {
+  &__head {
+    padding-bottom: 8px;
+    border-bottom: solid #fff 1px;
+    margin-bottom: 8px;
+  }
+  &__text {
+    font-size: 0.75em;
+    font-style: italic;
+    >span {
+      display: block;
+      white-space: nowrap;
+      margin-bottom: 0.5em;
+    }
+  }
+}

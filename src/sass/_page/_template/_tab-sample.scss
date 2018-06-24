@@ -21,14 +21,6 @@
     background-color: $theme-color-1;
   }
 }
-.tab-contents-list {
-  > * {
-    display: none;
-    &.is-active {
-      display: block;
-    }
-  }
-}
 .tab-card {
   background-color: $theme-color-1;
   padding: 16px;

@@ -1,13 +1,50 @@
-<article class="section-sepalator">
+<%
+const data = {
+  "japanese": "カラム切り替え",
+  "name": "section1",
+  "codes": [
+    {
+      "type": "html",
+      "txt": `
+<div class="js-col-wrapper is-2-col">
+  <div>
+    <button class="column-change-btn js-col-trigger is-selected" data-col="2">button</button>
+    <button class="column-change-btn js-col-trigger" data-col="3">button</button>
+  </div>
+  <ul class="column-change-list">
+    <li>content</li>
+    <li>content</li>
+    <li>content</li>
+    <li>content</li>
+    <li>content</li>
+    <li>content</li>
+  </ul>
+</div>
+        `
+    },
+    {
+      "type": "sass",
+      "txt": "コード"
+    }
+  ]
+}
+-%>
+<article class="section-sepalator js-modal-wrapper">
   <div class="heading">
-    <h3>スクロールでスライドイン</h3>
+    <h2 class="heading__title">スクロールでスライドイン</h2>
+    <div class="code-open"><button class="js-modal-trigger">code<span><% include /ejs/_icon/_report %></span></button></div>
   </div>
-  <div class="slide-in">
-    <ul>
-      <li class="slide-in__content js-slide-in">content1</li>
-      <li class="slide-in__content js-slide-in">content2</li>
-      <li class="slide-in__content js-slide-in">content3</li>
-      <li class="slide-in__content js-slide-in">content4</li>
-    </ul>
-  </div>
+  <section class="sample">
+    <div class="sample__head"><h2>SAMPLE</h2></div>
+    <div class="slide-in">
+      <ul>
+        <li class="slide-in__content js-slide-in">content1</li>
+        <li class="slide-in__content js-slide-in">content2</li>
+        <li class="slide-in__content js-slide-in">content3</li>
+        <li class="slide-in__content js-slide-in">content4</li>
+      </ul>
+    </div>
+  </section>
+
+  <%- include('/ejs/_components/_modal-code', {data: data}) %>
 </article>
